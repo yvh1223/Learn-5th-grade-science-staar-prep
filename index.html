@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vihaan's 5th Grade Science Adventure!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #4a47a3;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .progress-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 25px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .progress {
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .chapter-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-color: #4a47a3;
+        }
+        
+        .chapter-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .chapter-number {
+            background: #4a47a3;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .completed-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .test-prep {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .study-tips {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            background: #4a47a3;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s ease;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #363399;
+        }
+        
+        .achievement {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            background: #FFD700;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Vihaan's Science Adventure! 🧪</h1>
+            <p style="font-size: 1.3em; color: #666; margin: 15px 0;">
+                Complete 5th Grade Science • STAAR & MAP Test Ready • Summer Learning Fun!
+            </p>
+            <div class="achievement">🏆 Future Scientist</div>
+            <div class="achievement">📚 Learning Champion</div>
+            <div class="achievement">🧠 Problem Solver</div>
+        </div>
+
+        <div class="progress-section">
+            <h2 style="text-align: center; margin-bottom: 15px;">📊 Your Learning Progress</h2>
+            <div class="progress-bar">
+                <div class="progress" id="progressBar">0% Complete</div>
+            </div>
+            <p style="text-align: center; color: #666;">
+                Complete all chapters and quizzes to master 5th grade science!
+            </p>
+        </div>
+
+        <div class="test-prep">
+            <h2>🎯 STAAR & MAP Test Preparation</h2>
+            <p>This curriculum is specifically designed to help you excel on:</p>
+            <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap;">
+                <div style="background: white; padding: 15px; border-radius: 10px; min-width: 200px;">
+                    <h3>📋 STAAR Science Test</h3>
+                    <p>Texas state assessment covering all major science concepts</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px; min-width: 200px;">
+                    <h3>📈 MAP Growth Test</h3>
+                    <p>Measures your progress and growth in science understanding</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin: 30px 0; color: white; font-size: 2em;">📖 Science Chapters</h2>
+        
+        <div class="chapter-grid">
+            <a href="chapter1.html" class="chapter-card">
+                <div class="chapter-number">1</div>
+                <div class="chapter-icon">🔬</div>
+                <h3>Scientific Method & Tools</h3>
+                <p>Learn how scientists solve mysteries and discover amazing things about our world!</p>
+                <div style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                    ✅ Scientific method steps<br>
+                    ✅ Laboratory tools<br>
+                    ✅ Making observations<br>
+                    ✅ Practice quiz included
+                </div>
+            </a>
+
+            <a href="chapter2.html" class="chapter-card">
+                <div class="chapter-number">2</div>
+                <div class="chapter-icon">🌍</div>
+                <h3>Earth & Space Science</h3>
+                <p>Explore our amazing planet Earth and the incredible solar system around us!</p>
+                <div style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                    ✅ Earth's layers<br>
+                    ✅ Solar system planets<br>
+                    ✅ Moon phases<br>
+                    ✅ Practice quiz included
+                </div>
+            </a>
+
+            <a href="chapter3.html" class="chapter-card">
+                <div class="chapter-number">3</div>
+                <div class="chapter-icon">🌱</div>
+                <h3>Living Systems</h3>
+                <p>Discover the amazing world of plants, animals, and the tiny cells that make up all life!</p>
+                <div style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                    ✅ Plant and animal cells<br>
+                    ✅ Photosynthesis<br>
+                    ✅ Food chains & webs<br>
+                    ✅ Practice quiz included
+                </div>
+            </a>
+
+            <a href="chapter4.html" class="chapter-card">
+                <div class="chapter-number">4</div>
+                <div class="chapter-icon">⚡</div>
+                <h3>Matter & Energy</h3>
+                <p>Learn about the building blocks of everything around us and the energy that powers our world!</p>
+                <div style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                    ✅ States of matter<br>
+                    ✅ Physical & chemical changes<br>
+                    ✅ Forms of energy<br>
+                    ✅ Practice quiz included
+                </div>
+            </a>
+
+            <a href="chapter5.html" class="chapter-card">
+                <div class="chapter-number">5</div>
+                <div class="chapter-icon">🌊</div>
+                <h3>Water Cycle & Weather</h3>
+                <p>Understand how water moves around our planet and what creates different weather patterns!</p>
+                <div style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                    ✅ Water cycle process<br>
+                    ✅ Weather vs climate<br>
+                    ✅ Cloud types<br>
+                    ✅ Practice quiz included
+                </div>
+            </a>
+
+            <a href="final_review.html" class="chapter-card" style="border: 3px solid #FFD700; background: linear-gradient(135deg, #fff9c4, #fff59d);">
+                <div class="chapter-number" style="background: #FFD700; color: #333;">🏆</div>
+                <div class="chapter-icon">🎯</div>
+                <h3>Final Review & Test Prep</h3>
+                <p>Put it all together with comprehensive review questions and test-taking strategies!</p>
+                <div style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                    ✅ Mixed practice questions<br>
+                    ✅ STAAR format practice<br>
+                    ✅ Test-taking tips<br>
+                    ✅ Final assessment
+                </div>
+            </a>
+        </div>
+
+        <div class="study-tips">
+            <h2>💡 Study Tips for Success</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <h3>📅 Daily Schedule</h3>
+                    <p>Study 1 chapter every 3-4 days. Take breaks and review previous chapters!</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <h3>🧪 Hands-On Learning</h3>
+                    <p>Try the experiments! Science is best learned by doing and exploring.</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <h3>❓ Ask Questions</h3>
+                    <p>Write down questions as you learn. Research answers or ask adults for help!</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 10px;">
+                    <h3>📝 Take Notes</h3>
+                    <p>Keep a science journal. Drawing diagrams helps you remember better!</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="chapter1.html" class="btn" style="font-size: 1.2em; padding: 20px 40px;">
+                🚀 Start Your Science Adventure!
+            </a>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; margin: 30px 0; text-align: center; color: white;">
+            <h3>🌟 Remember, Vihaan:</h3>
+            <p style="font-size: 1.1em; margin: 10px 0;">
+                "Science is not just about memorizing facts - it's about understanding how our amazing world works!<br>
+                You're going to be a fantastic scientist! 🔬✨"
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Update progress based on completed chapters
+        function updateProgress() {
+            const completed = JSON.parse(localStorage.getItem('completedChapters') || '[]');
+            const progress = (completed.length / 5) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.round(progress) + '% Complete';
+        }
+        
+        // Initialize progress on page load
+        updateProgress();
+    </script>
+</body>
+</html>
