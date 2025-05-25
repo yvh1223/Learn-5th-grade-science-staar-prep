@@ -37,8 +37,6 @@ Based on 2024 Texas Education Agency data, students need:
 
 ## 🚀 **Getting Started**
 
-Visit the GitHub Pages site: **https://yvh1223.github.io/vihaan-5th-grade-science-staar-prep/**
-
 1. **Start with any chapter** that interests you most
 2. **Read the enhanced study guide** for memory tricks and tips
 3. **Take the practice test** to check your understanding

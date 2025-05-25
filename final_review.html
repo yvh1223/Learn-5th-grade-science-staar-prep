@@ -1,0 +1,378 @@
+                    correct: 2,
+                    chapter: 1,
+                    explanation: "A balance scale measures mass (how much matter is in an object)!"
+                }
+            ],
+            
+            quick: [
+                {
+                    question: "What is the control center of a cell called?",
+                    options: ["Cell wall", "Nucleus", "Chloroplast", "Vacuole"],
+                    correct: 1,
+                    chapter: 3,
+                    explanation: "The nucleus controls all cell activities - it's like the brain of the cell!"
+                },
+                {
+                    question: "Which planet is closest to the sun?",
+                    options: ["Venus", "Earth", "Mercury", "Mars"],
+                    correct: 2,
+                    chapter: 2,
+                    explanation: "Mercury is the closest planet to the sun in our solar system!"
+                },
+                {
+                    question: "Energy cannot be created or destroyed, only:",
+                    options: ["Wasted", "Transformed", "Stopped", "Slowed down"],
+                    correct: 1,
+                    chapter: 4,
+                    explanation: "The Law of Conservation of Energy states energy can only change forms!"
+                },
+                {
+                    question: "What causes rain in the water cycle?",
+                    options: ["Evaporation", "Condensation", "Precipitation", "Collection"],
+                    correct: 2,
+                    chapter: 5,
+                    explanation: "Precipitation occurs when water droplets in clouds become too heavy and fall!"
+                },
+                {
+                    question: "What tool measures temperature?",
+                    options: ["Barometer", "Thermometer", "Anemometer", "Hygrometer"],
+                    correct: 1,
+                    chapter: 1,
+                    explanation: "A thermometer measures how hot or cold something is!"
+                },
+                {
+                    question: "Plants make their own food through:",
+                    options: ["Respiration", "Photosynthesis", "Digestion", "Absorption"],
+                    correct: 1,
+                    chapter: 3,
+                    explanation: "Photosynthesis allows plants to make food using sunlight, water, and carbon dioxide!"
+                },
+                {
+                    question: "In which state of matter are particles closest together?",
+                    options: ["Gas", "Liquid", "Solid", "Plasma"],
+                    correct: 2,
+                    chapter: 4,
+                    explanation: "Solid particles are packed tightly together and vibrate in place!"
+                },
+                {
+                    question: "Which type of cloud looks like cotton balls?",
+                    options: ["Stratus", "Cirrus", "Cumulus", "Nimbus"],
+                    correct: 2,
+                    chapter: 5,
+                    explanation: "Cumulus clouds are puffy and look like cotton balls in the sky!"
+                },
+                {
+                    question: "Earth's thickest layer is the:",
+                    options: ["Crust", "Mantle", "Outer core", "Inner core"],
+                    correct: 1,
+                    chapter: 2,
+                    explanation: "The mantle is Earth's largest and thickest layer!"
+                },
+                {
+                    question: "A good hypothesis should be:",
+                    options: ["Always correct", "Testable", "Very complicated", "Impossible to prove"],
+                    correct: 1,
+                    chapter: 1,
+                    explanation: "A hypothesis must be testable through experiments or observations!"
+                }
+            ]
+        };
+
+        let currentQuizMode = 'mixed';
+        let currentQuestions = [];
+        
+        // Final Review Quiz Class
+        class FinalReviewQuiz extends ScienceQuiz {
+            constructor() {
+                super();
+                this.currentQuizMode = 'mixed';
+                this.chapterScores = {};
+                this.initializeQuiz();
+            }
+            
+            initializeQuiz() {
+                this.setQuizMode('mixed');
+                this.updateProgressSummary();
+            }
+            
+            getQuizData() {
+                return {
+                    questions: currentQuestions
+                };
+            }
+            
+            getChapterNumber() {
+                return 'final';
+            }
+            
+            setQuizMode(mode) {
+                this.currentQuizMode = mode;
+                currentQuestions = [...comprehensiveQuestions[mode]];
+                
+                // Shuffle questions
+                for (let i = currentQuestions.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [currentQuestions[i], currentQuestions[j]] = [currentQuestions[j], currentQuestions[i]];
+                }
+                
+                this.currentQuestion = 0;
+                this.userAnswers = [];
+                this.updateModeDescription(mode);
+                this.generateQuizHTML();
+                this.showQuestion(0);
+                this.updateQuestionCounter();
+            }
+            
+            updateModeDescription(mode) {
+                const descriptions = {
+                    mixed: 'Mixed Review Mode: Questions from all chapters to test your complete understanding!',
+                    staar: 'STAAR Practice Mode: Questions formatted like the Texas state science test!',
+                    quick: 'Quick Review Mode: Essential questions to check your basic knowledge!'
+                };
+                
+                document.getElementById('quiz-mode-description').innerHTML = 
+                    `<strong>${descriptions[mode]}</strong>`;
+            }
+            
+            generateQuizHTML() {
+                const container = document.getElementById('quiz-container');
+                container.innerHTML = '';
+                
+                currentQuestions.forEach((q, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'question';
+                    questionDiv.dataset.question = index;
+                    if (index === 0) questionDiv.classList.add('active');
+                    
+                    questionDiv.innerHTML = `
+                        <h3>Question ${index + 1} of ${currentQuestions.length}</h3>
+                        <p>${q.question}</p>
+                        <div class="options">
+                            ${q.options.map((option, i) => 
+                                `<button class="option" data-answer="${i}">${option}</button>`
+                            ).join('')}
+                        </div>
+                        <div class="feedback"></div>
+                    `;
+                    
+                    container.appendChild(questionDiv);
+                });
+            }
+            
+            updateQuestionCounter() {
+                const counter = document.getElementById('question-counter');
+                if (counter) {
+                    counter.textContent = `Question ${this.currentQuestion + 1} of ${currentQuestions.length}`;
+                }
+            }
+            
+            showQuestion(index) {
+                super.showQuestion(index);
+                this.updateQuestionCounter();
+            }
+            
+            nextQuestion() {
+                super.nextQuestion();
+                this.updateQuestionCounter();
+            }
+            
+            previousQuestion() {
+                super.previousQuestion();
+                this.updateQuestionCounter();
+            }
+            
+            calculateChapterBreakdown() {
+                const breakdown = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
+                const totals = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
+                
+                currentQuestions.forEach((q, index) => {
+                    totals[q.chapter]++;
+                    if (this.userAnswers[index] === q.correct) {
+                        breakdown[q.chapter]++;
+                    }
+                });
+                
+                return { breakdown, totals };
+            }
+            
+            showResults(score) {
+                const resultsDiv = document.getElementById('quiz-results');
+                const scoreDisplay = document.getElementById('score-display');
+                const detailedBreakdown = document.getElementById('detailed-breakdown');
+                const answersReview = document.getElementById('answers-review');
+
+                if (resultsDiv && scoreDisplay) {
+                    resultsDiv.style.display = 'block';
+                    resultsDiv.scrollIntoView({ behavior: 'smooth' });
+
+                    let scoreClass = '';
+                    let message = '';
+                    let emoji = '';
+
+                    if (score >= 90) {
+                        scoreClass = 'score-excellent';
+                        message = "OUTSTANDING! You're absolutely ready for your tests! 🌟";
+                        emoji = '🏆';
+                        this.showCertificate();
+                    } else if (score >= 80) {
+                        scoreClass = 'score-excellent';
+                        message = "EXCELLENT! You've mastered 5th grade science! 🎯";
+                        emoji = '🎉';
+                        this.showCertificate();
+                    } else if (score >= 70) {
+                        scoreClass = 'score-good';
+                        message = "GREAT JOB! You're doing well - review the topics you missed! 👍";
+                        emoji = '🎯';
+                    } else {
+                        scoreClass = 'score-needs-practice';
+                        message = "Keep practicing! Focus on the chapters where you missed questions! 💪";
+                        emoji = '📚';
+                    }
+
+                    scoreDisplay.className = scoreClass;
+                    scoreDisplay.innerHTML = `
+                        <div style="font-size: 3em; margin-bottom: 15px;">${emoji}</div>
+                        <div>Your Final Score: ${score}%</div>
+                        <div style="font-size: 1em; margin-top: 10px;">${message}</div>
+                    `;
+
+                    // Chapter breakdown
+                    if (detailedBreakdown) {
+                        const { breakdown, totals } = this.calculateChapterBreakdown();
+                        let breakdownHTML = '<h4>📊 Performance by Chapter:</h4><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">';
+                        
+                        const chapterNames = {
+                            1: '🔬 Scientific Method',
+                            2: '🌍 Earth & Space',
+                            3: '🌱 Living Systems',
+                            4: '⚡ Matter & Energy',
+                            5: '🌊 Water Cycle'
+                        };
+                        
+                        for (let chapter = 1; chapter <= 5; chapter++) {
+                            if (totals[chapter] > 0) {
+                                const chapterScore = Math.round((breakdown[chapter] / totals[chapter]) * 100);
+                                const chapterClass = chapterScore >= 80 ? '#4CAF50' : chapterScore >= 60 ? '#FF9800' : '#f44336';
+                                
+                                breakdownHTML += `
+                                    <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid ${chapterClass};">
+                                        <strong>${chapterNames[chapter]}</strong><br>
+                                        ${breakdown[chapter]}/${totals[chapter]} correct (${chapterScore}%)
+                                    </div>
+                                `;
+                            }
+                        }
+                        
+                        breakdownHTML += '</div>';
+                        detailedBreakdown.innerHTML = breakdownHTML;
+                    }
+
+                    // Detailed review (shortened for final quiz)
+                    if (answersReview) {
+                        let reviewHTML = '<h4>📋 Quick Answer Review:</h4><div style="text-align: left; margin-top: 15px;">';
+                        
+                        currentQuestions.forEach((q, index) => {
+                            const userAnswer = this.userAnswers[index];
+                            const isCorrect = userAnswer === q.correct;
+                            
+                            if (!isCorrect) { // Only show incorrect answers
+                                const icon = '❌';
+                                reviewHTML += `
+                                    <div style="margin-bottom: 15px; padding: 10px; background: #fee; border-radius: 8px;">
+                                        <strong>${icon} Question ${index + 1}:</strong> ${q.question}<br>
+                                        <strong>Your answer:</strong> ${q.options[userAnswer] || 'Not answered'}<br>
+                                        <strong>Correct answer:</strong> ${q.options[q.correct]}<br>
+                                        <em>${q.explanation}</em>
+                                    </div>
+                                `;
+                            }
+                        });
+                        
+                        if (score >= 90) {
+                            reviewHTML += '<div style="text-align: center; padding: 20px; background: #e8f5e8; border-radius: 8px;"><strong>🎉 Perfect or near-perfect score! You got most questions right!</strong></div>';
+                        }
+                        
+                        reviewHTML += '</div>';
+                        answersReview.innerHTML = reviewHTML;
+                    }
+                }
+            }
+            
+            showCertificate() {
+                const certificateSection = document.getElementById('certificate-section');
+                if (certificateSection) {
+                    certificateSection.style.display = 'block';
+                    setTimeout(() => {
+                        certificateSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 1000);
+                }
+            }
+            
+            updateProgressSummary() {
+                const completed = JSON.parse(localStorage.getItem('completedChapters') || '[]');
+                const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
+                const progressDiv = document.getElementById('overall-progress');
+                
+                if (progressDiv) {
+                    const totalChapters = 5;
+                    const completedCount = completed.length;
+                    const progressPercent = (completedCount / totalChapters) * 100;
+                    
+                    let progressHTML = `
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="background: #e0e0e0; border-radius: 10px; height: 30px; position: relative; margin: 15px 0;">
+                                <div style="background: linear-gradient(90deg, #4CAF50, #45a049); height: 100%; border-radius: 10px; width: ${progressPercent}%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                    ${Math.round(progressPercent)}% Complete
+                                </div>
+                            </div>
+                            <p><strong>Completed: ${completedCount} out of ${totalChapters} chapters</strong></p>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 20px 0;">
+                    `;
+                    
+                    for (let i = 1; i <= 5; i++) {
+                        const isCompleted = completed.includes(i);
+                        const score = scores[`chapter${i}`] || 0;
+                        const status = isCompleted ? `✅ ${score}%` : '⏳ Pending';
+                        const bgColor = isCompleted ? (score >= 80 ? '#e8f5e8' : '#fff3e0') : '#f5f5f5';
+                        
+                        progressHTML += `
+                            <div style="background: ${bgColor}; padding: 10px; border-radius: 8px; text-align: center;">
+                                <strong>Chapter ${i}</strong><br>
+                                <small>${status}</small>
+                            </div>
+                        `;
+                    }
+                    
+                    progressHTML += '</div>';
+                    progressDiv.innerHTML = progressHTML;
+                }
+            }
+        }
+
+        // Global functions for mode selection
+        function setQuizMode(mode) {
+            // Update button styles
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update quiz
+            if (window.finalQuiz) {
+                window.finalQuiz.setQuizMode(mode);
+            }
+        }
+
+        // Initialize final quiz when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('quiz-container')) {
+                window.finalQuiz = new FinalReviewQuiz();
+            }
+            addPageAnimations();
+        });
+    </script>
+    <script src="quiz.js"></script>
+</body>
+</html>

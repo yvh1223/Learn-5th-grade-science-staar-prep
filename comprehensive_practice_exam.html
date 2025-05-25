@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive STAAR Practice Exam</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .exam-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .timer-display {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #4a90e2;
+            z-index: 1000;
+        }
+        .question-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .question-number {
+            background: #4a90e2;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .chapter-tag {
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            color: #666;
+            float: right;
+        }
+        .answer-option {
+            display: block;
+            padding: 10px 15px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .answer-option:hover {
+            background: #e3f2fd;
+            border-color: #2196F3;
+        }
+        .answer-option.selected {
+            background: #e3f2fd;
+            border-color: #2196F3;
+        }
+        .btn {
+            background: #4a90e2;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { background: #357abd; }
+        .btn-success { background: #4CAF50; }
+        .btn-warning { background: #ff9800; }
+    </style>
+</head>
+<body>
+    <div class="timer-display" id="timer">
+        ⏱️ Time: <span id="time-display">45:00</span>
+    </div>
+
+    <div class="container">
+        <div class="exam-header">
+            <h1>🧪 Comprehensive STAAR Practice Exam</h1>
+            <p>Sample Questions from All 5 Chapters</p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <h3>📊 Progress: <span id="answered-count">0</span> of 8 questions answered</h3>
+            <div style="background: #e0e0e0; height: 20px; border-radius: 10px; overflow: hidden;">
+                <div id="progress" style="background: linear-gradient(90deg, #4CAF50, #45a049); height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+            </div>
+        </div>
+
+        <form id="comprehensive-exam">
+            <div class="question-card">
+                <div class="question-number">1</div>
+                <div class="chapter-tag">Scientific Method</div>
+                <p><strong>What is the FIRST step in the scientific method?</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q1" value="B"> B. Ask a question
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q1" value="A"> A. Form a hypothesis
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q1" value="C"> C. Conduct an experiment
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q1" value="D"> D. Analyze data
+                </label>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">2</div>
+                <div class="chapter-tag">Scientific Tools</div>
+                <p><strong>Which tool measures mass?</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="B"> B. Balance
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="A"> A. Ruler
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="C"> C. Graduated cylinder
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="D"> D. Thermometer
+                </label>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">3</div>
+                <div class="chapter-tag">Earth & Space</div>
+                <p><strong>What causes day and night?</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="B"> B. Earth's rotation on its axis
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="A"> A. Earth's revolution around the Sun
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="C"> C. The Moon's orbit
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="D"> D. Solar flares
+                </label>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">4</div>
+                <div class="chapter-tag">Living Systems</div>
+                <p><strong>How do plants make food?</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q4" value="B"> B. Photosynthesis
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q4" value="A"> A. Respiration
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q4" value="C"> C. Digestion
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q4" value="D"> D. Circulation
+                </label>
+            </div>
+
+            <div style="background: #fff3e0; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+                <p><strong>📝 Demo Version:</strong> Full exam would have 32 questions covering all topics.</p>
+            </div>
+        </form>
+
+        <div style="background: white; padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0;">
+            <button type="button" class="btn btn-warning" onclick="reviewAnswers()">📋 Review</button>
+            <button type="button" class="btn btn-success" onclick="submitExam()">✅ Submit</button>
+            <button type="button" class="btn" onclick="restartExam()">🔄 Restart</button>
+        </div>
+
+        <div id="results" style="display: none; background: white; padding: 30px; border-radius: 15px; margin: 30px 0;">
+            <h2>🎉 Results</h2>
+            <div id="score-summary"></div>
+        </div>
+
+        <div class="navigation">
+            <a href="index.html" class="btn">🏠 Home</a>
+            <a href="test_strategies.html" class="btn">🎯 Test Strategies</a>
+        </div>
+    </div>
+
+    <script>
+        const TOTAL_QUESTIONS = 4;
+        const correctAnswers = { q1: 'B', q2: 'B', q3: 'B', q4: 'B' };
+        let timeRemaining = 45 * 60;
+        let timerInterval;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            startTimer();
+            initializeAnswers();
+        });
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                document.getElementById('time-display').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    submitExam();
+                }
+            }, 1000);
+        }
+
+        function initializeAnswers() {
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const questionName = this.name;
+                    document.querySelectorAll(`input[name="${questionName}"]`).forEach(option => {
+                        option.parentElement.classList.remove('selected');
+                    });
+                    this.parentElement.classList.add('selected');
+                    updateProgress();
+                });
+            });
+        }
+
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            document.getElementById('answered-count').textContent = answered;
+            document.getElementById('progress').style.width = (answered / TOTAL_QUESTIONS) * 100 + '%';
+        }
+
+        function reviewAnswers() {
+            let answered = 0;
+            for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+            }
+            alert(`Progress: ${answered}/${TOTAL_QUESTIONS} questions answered`);
+        }
+
+        function submitExam() {
+            clearInterval(timerInterval);
+            let score = 0;
+            for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[`q${i}`]) score++;
+            }
+            
+            const percentage = Math.round((score / TOTAL_QUESTIONS) * 100);
+            const staarEstimate = Math.round(1140 + (score / TOTAL_QUESTIONS) * (4948 - 1140));
+            
+            document.getElementById('score-summary').innerHTML = `
+                <div style="text-align: center;">
+                    <div style="font-size: 3em; color: #4CAF50; margin: 20px 0;">${score}/${TOTAL_QUESTIONS}</div>
+                    <div style="font-size: 1.5em;">${percentage}% Correct</div>
+                    <div style="margin: 20px 0; padding: 15px; background: #e3f2fd; border-radius: 10px;">
+                        <strong>Estimated STAAR Score: ${staarEstimate}</strong>
+                    </div>
+                </div>
+            `;
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function restartExam() {
+            if (confirm('Restart exam?')) location.reload();
+        }
+    </script>
+</body>
+</html>

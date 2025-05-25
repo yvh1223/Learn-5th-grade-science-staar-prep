@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Living Systems</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cell-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .cell-diagram {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .plant-cell {
+            border: 3px solid #4CAF50;
+        }
+        
+        .animal-cell {
+            border: 3px solid #FF9800;
+        }
+        
+        .cell-visual {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 10px;
+        }
+        
+        .plant-cell-visual {
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+            border: 4px solid #2e7d32;
+        }
+        
+        .animal-cell-visual {
+            background: linear-gradient(135deg, #ffe0b2, #ffcc02);
+            border: 3px solid #f57c00;
+            border-radius: 50%;
+        }
+        
+        .nucleus {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #8bc34a, #689f38);
+            border-radius: 50%;
+            border: 2px solid #33691e;
+        }
+        
+        .chloroplast {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #4caf50;
+            border-radius: 50%;
+        }
+        
+        .chloroplast:nth-child(2) { top: 30px; right: 30px; }
+        .chloroplast:nth-child(3) { bottom: 40px; left: 40px; }
+        .chloroplast:nth-child(4) { top: 70px; left: 30px; }
+        
+        .organelle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ff9800;
+            border-radius: 50%;
+        }
+        
+        .organelle:nth-child(2) { top: 40px; right: 40px; }
+        .organelle:nth-child(3) { bottom: 50px; left: 50px; }
+        .organelle:nth-child(4) { top: 80px; right: 60px; }
+        
+        .photosynthesis-equation {
+            background: linear-gradient(135deg, #81c784, #66bb6a);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.3em;
+        }
+        
+        .equation-parts {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .equation-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .equation-arrow {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .food-chain {
+            background: linear-gradient(135deg, #ffecb3, #ffe082);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .chain-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .chain-organism {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .organism-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .flow-arrow {
+            font-size: 2em;
+            color: #4caf50;
+        }
+        
+        .ecosystem-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .ecosystem-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .ecosystem-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .ecosystem-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Chapter 3: Living Systems</h1>
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Home</a> → <a href="chapter2.html">Chapter 2</a> → Chapter 3
+            </div>
+        </div>
+
+        <div class="lesson-content">
+            <div class="intro-section">
+                <h2>🔬 Discover the Amazing World of Life!</h2>
+                <p>Every living thing on Earth is made of tiny building blocks called cells! From the tiniest bacteria to giant elephants, all life shares these incredible microscopic structures. Let's explore how plants and animals are built and how they survive!</p>
+            </div>
+
+            <div class="diagram-section">
+                <h3>🏠 Cells - The Building Blocks of Life</h3>
+                <p>Just like houses are made of bricks, all living things are made of cells! Let's compare plant and animal cells to see what makes them special.</p>
+                
+                <div class="cell-comparison">
+                    <div class="cell-diagram plant-cell">
+                        <h4>🌿 Plant Cell</h4>
+                        <div class="cell-visual plant-cell-visual">
+                            <div class="nucleus"></div>
+                            <div class="chloroplast"></div>
+                            <div class="chloroplast"></div>
+                            <div class="chloroplast"></div>
+                        </div>
+                        <div style="text-align: left; margin-top: 20px;">
+                            <h5>Special Plant Cell Parts:</h5>
+                            <ul>
+                                <li><strong>🧱 Cell Wall:</strong> Strong outer wall for protection</li>
+                                <li><strong>💚 Chloroplasts:</strong> Make food using sunlight</li>
+                                <li><strong>🧠 Nucleus:</strong> Control center (brain of cell)</li>
+                                <li><strong>💧 Large Vacuole:</strong> Stores water and keeps plant upright</li>
+                                <li><strong>🌿 Green Color:</strong> From chlorophyll in chloroplasts</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="cell-diagram animal-cell">
+                        <h4>🐾 Animal Cell</h4>
+                        <div class="cell-visual animal-cell-visual">
+                            <div class="nucleus"></div>
+                            <div class="organelle"></div>
+                            <div class="organelle"></div>
+                            <div class="organelle"></div>
+                        </div>
+                        <div style="text-align: left; margin-top: 20px;">
+                            <h5>Special Animal Cell Parts:</h5>
+                            <ul>
+                                <li><strong>🫧 Cell Membrane:</strong> Flexible boundary (like skin)</li>
+                                <li><strong>🧠 Nucleus:</strong> Control center (brain of cell)</li>
+                                <li><strong>⚡ Mitochondria:</strong> Power plants that make energy</li>
+                                <li><strong>🔄 Various Organelles:</strong> Different cell parts with jobs</li>
+                                <li><strong>🌈 No Chloroplasts:</strong> Can't make their own food</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h4>🤔 Key Differences:</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <strong>🌱 Plants:</strong>
+                            <ul>
+                                <li>✅ Make their own food (photosynthesis)</li>
+                                <li>✅ Have cell walls (rigid structure)</li>
+                                <li>✅ Have chloroplasts (green color)</li>
+                                <li>✅ Can't move around</li>
+                                <li>✅ Get energy from sunlight</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>🐾 Animals:</strong>
+                            <ul>
+                                <li>✅ Must eat food for energy</li>
+                                <li>✅ Have flexible cell membranes</li>
+                                <li>✅ No chloroplasts</li>
+                                <li>✅ Can move around</li>
+                                <li>✅ Get energy from food</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photosynthesis-section">
+                <h3>🌞 Photosynthesis - How Plants Make Food!</h3>
+                <p>Plants are amazing! They can make their own food using sunlight, water, and air. This incredible process is called photosynthesis, and it's why we have oxygen to breathe!</p>
+                
+                <div class="photosynthesis-equation">
+                    <h4>🧪 The Amazing Food-Making Recipe!</h4>
+                    <div class="equation-parts">
+                        <div class="equation-item">
+                            <div style="font-size: 2em;">☀️</div>
+                            <strong>Sunlight</strong><br>
+                            <small>Energy from the sun</small>
+                        </div>
+                        <div class="equation-arrow">+</div>
+                        <div class="equation-item">
+                            <div style="font-size: 2em;">💧</div>
+                            <strong>Water</strong><br>
+                            <small>From roots in soil</small>
+                        </div>
+                        <div class="equation-arrow">+</div>
+                        <div class="equation-item">
+                            <div style="font-size: 2em;">🌪️</div>
+                            <strong>Carbon Dioxide</strong><br>
+                            <small>From air through leaves</small>
+                        </div>
+                        <div class="equation-arrow">→</div>
+                        <div class="equation-item">
+                            <div style="font-size: 2em;">🍯</div>
+                            <strong>Sugar (Food)</strong><br>
+                            <small>Plant energy!</small>
+                        </div>
+                        <div class="equation-arrow">+</div>
+                        <div class="equation-item">
+                            <div style="font-size: 2em;">💨</div>
+                            <strong>Oxygen</strong><br>
+                            <small>What we breathe!</small>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                        <h5>🌟 Why Photosynthesis is AMAZING:</h5>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>🌱 Plants feed themselves AND make food for other living things</li>
+                            <li>💨 They clean our air by removing CO₂ and making oxygen</li>
+                            <li>🌍 Without photosynthesis, there would be no life on Earth!</li>
+                            <li>🌳 One large tree makes oxygen for 2 people per day!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-chain-section">
+                <h3>🍽️ Food Chains and Food Webs</h3>
+                <p>All living things need energy to survive! Energy flows through ecosystems in food chains, showing us who eats who. Let's follow the energy!</p>
+                
+                <div class="food-chain">
+                    <h4>🔗 Simple Food Chain - Energy Flow</h4>
+                    <div class="chain-flow">
+                        <div class="chain-organism">
+                            <div class="organism-icon">🌱</div>
+                            <strong>Producer</strong><br>
+                            <small>Makes its own food<br>(Grass, trees, plants)</small>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="chain-organism">
+                            <div class="organism-icon">🐰</div>
+                            <strong>Primary Consumer</strong><br>
+                            <small>Eats plants<br>(Rabbits, deer, caterpillars)</small>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="chain-organism">
+                            <div class="organism-icon">🦊</div>
+                            <strong>Secondary Consumer</strong><br>
+                            <small>Eats plant-eaters<br>(Foxes, birds, spiders)</small>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="chain-organism">
+                            <div class="organism-icon">🦅</div>
+                            <strong>Top Predator</strong><br>
+                            <small>Apex hunter<br>(Eagles, lions, sharks)</small>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.7); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                        <strong>🔄 Remember:</strong> Energy comes from the SUN → Plants capture it → Animals get it by eating!<br>
+                        <strong>🕸️ Food Webs:</strong> Real ecosystems have many connected food chains forming complex webs!
+                    </div>
+                </div>
+            </div>
+
+            <div class="ecosystem-section">
+                <h3>🌍 Ecosystems - Communities of Life</h3>
+                <p>An ecosystem is like a neighborhood where different living things work together! Each ecosystem has its own special conditions and amazing creatures.</p>
+                
+                <div class="ecosystem-types">
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-icon">🌳</div>
+                        <h4>Forest Ecosystem</h4>
+                        <p><strong>Climate:</strong> Moderate temperatures, regular rainfall</p>
+                        <p><strong>Life:</strong> Trees, mammals, birds, insects</p>
+                        <p><strong>Special:</strong> Many layers from forest floor to canopy</p>
+                    </div>
+                    
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-icon">🏜️</div>
+                        <h4>Desert Ecosystem</h4>
+                        <p><strong>Climate:</strong> Very hot and dry</p>
+                        <p><strong>Life:</strong> Cacti, lizards, snakes, small mammals</p>
+                        <p><strong>Special:</strong> Animals and plants save every drop of water</p>
+                    </div>
+                    
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-icon">🌊</div>
+                        <h4>Ocean Ecosystem</h4>
+                        <p><strong>Climate:</strong> Saltwater, varies by depth</p>
+                        <p><strong>Life:</strong> Fish, whales, coral, seaweed</p>
+                        <p><strong>Special:</strong> Covers 71% of Earth's surface</p>
+                    </div>
+                    
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-icon">🌿</div>
+                        <h4>Grassland Ecosystem</h4>
+                        <p><strong>Climate:</strong> Moderate rain, hot summers</p>
+                        <p><strong>Life:</strong> Grasses, grazing animals, predators</p>
+                        <p><strong>Special:</strong> Perfect for agriculture</p>
+                    </div>
+                    
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-icon">❄️</div>
+                        <h4>Tundra Ecosystem</h4>
+                        <p><strong>Climate:</strong> Very cold, little precipitation</p>
+                        <p><strong>Life:</strong> Small plants, caribou, polar bears</p>
+                        <p><strong>Special:</strong> Ground stays frozen year-round</p>
+                    </div>
+                    
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-icon">🐸</div>
+                        <h4>Freshwater Ecosystem</h4>
+                        <p><strong>Climate:</strong> Rivers, lakes, streams</p>
+                        <p><strong>Life:</strong> Fish, frogs, water plants, insects</p>
+                        <p><strong>Special:</strong> Provides drinking water for land animals</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>🤯 Amazing Life Facts!</h4>
+                <ul>
+                    <li>🔬 Your body has about 37 trillion cells!</li>
+                    <li>🌳 A single tree can absorb 48 pounds of CO₂ per year!</li>
+                    <li>🐋 The largest living thing is a blue whale (up to 100 feet long)!</li>
+                    <li>🦠 The smallest living things are bacteria (need microscope to see)!</li>
+                    <li>🌿 Plants produce about 330 billion tons of oxygen every year!</li>
+                    <li>🐜 Ants can lift 50 times their own body weight!</li>
+                </ul>
+            </div>
+
+            <div class="experiment-box">
+                <h3>🧪 Try This: Photosynthesis Experiment!</h3>
+                <div class="experiment-content">
+                    <p><strong>🎯 Goal:</strong> See photosynthesis in action!</p>
+                    
+                    <p><strong>📋 Materials:</strong> Clear glass, water, green leaf or aquatic plant, sunny window</p>
+                    
+                    <p><strong>📋 Instructions:</strong></p>
+                    <ol>
+                        <li>Fill glass with water</li>
+                        <li>Place a green leaf or aquatic plant in water</li>
+                        <li>Put glass in bright sunlight</li>
+                        <li>Watch for tiny bubbles on the leaf!</li>
+                        <li>Those bubbles are oxygen being produced!</li>
+                    </ol>
+                    
+                    <p><strong>🤔 Think About:</strong> Why do bubbles appear? What would happen in the dark? Try it!</p>
+                    
+                    <p><strong>🌱 Extension:</strong> Compare plants in sun vs shade. Which produces more oxygen bubbles?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>🧠 Test Your Knowledge!</h2>
+            <div id="quiz-container">
+                <!-- Quiz questions will be generated by JavaScript -->
+            </div>
+            <div class="quiz-controls">
+                <button id="prev-btn" class="btn" disabled>⬅️ Previous</button>
+                <button id="next-btn" class="btn">Next ➡️</button>
+                <button id="submit-btn" class="btn btn-primary" style="display: none;">Submit Quiz 🎯</button>
+            </div>
+            <div id="quiz-results" class="results" style="display: none;">
+                <h3>🎉 Quiz Results</h3>
+                <div id="score-display"></div>
+                <div id="answers-review"></div>
+            </div>
+        </div>
+
+        <!-- Enhanced Study Materials Section -->
+        <div class="enhanced-study-section" style="background: linear-gradient(135deg, #e8f5e8, #c8e6c9); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center; border: 3px solid #4CAF50;">
+            <h2 style="color: #2e7d32; margin-bottom: 20px;">🎯 Enhanced STAAR Test Prep Resources</h2>
+            <p style="font-size: 1.2em; margin-bottom: 25px; color: #1b5e20;">Take your Living Systems mastery to the next level with our enhanced study tools!</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+                <a href="chapter3_study_guide_enhanced.html" class="btn btn-primary" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #4CAF50, #45a049); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📚 Enhanced Study Guide<br><small style="opacity: 0.9;">Memory tricks & STAAR tips</small></a>
+                
+                <a href="chapter3_practice_test.html" class="btn btn-success" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #2196F3, #1976D2); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📝 Practice Test<br><small style="opacity: 0.9;">STAAR-format questions</small></a>
+                
+                <a href="test_strategies.html" class="btn btn-warning" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #FF9800, #F57C00); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">🎯 Test Strategies<br><small style="opacity: 0.9;">Score higher on STAAR</small></a>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                <p style="margin: 0; color: #2e7d32;"><strong>🌟 New!</strong> These enhanced materials include STAAR score targets, memory tricks, and test-taking strategies to help you achieve 250+ scale score success!</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter2.html" class="btn">⬅️ Previous: Earth & Space</a>
+            <a href="index.html" class="btn">🏠 Back to Home</a>
+            <a href="chapter4.html" class="btn btn-next">Next: Matter & Energy ⚡</a>
+        </div>
+    </div>
+
+    <script>
+        // Chapter 3 Quiz Data
+        const chapter3QuizData = {
+            questions: [
+                {
+                    question: "What part of the cell controls all activities?",
+                    options: ["Cell wall", "Chloroplast", "Nucleus", "Cell membrane"],
+                    correct: 2,
+                    explanation: "The nucleus is like the brain of the cell - it controls all the cell's activities and contains the cell's DNA!"
+                },
+                {
+                    question: "What do plants need to make their own food through photosynthesis?",
+                    options: ["Sunlight, water, and carbon dioxide", "Soil, air, and darkness", "Only water", "Only sunlight"],
+                    correct: 0,
+                    explanation: "Plants need sunlight (energy), water (from roots), and carbon dioxide (from air) to make sugar and release oxygen!"
+                },
+                {
+                    question: "What gas do plants release during photosynthesis that we need to breathe?",
+                    options: ["Carbon dioxide", "Nitrogen", "Oxygen", "Hydrogen"],
+                    correct: 2,
+                    explanation: "Plants release oxygen as a byproduct of photosynthesis - that's the fresh air we breathe!"
+                },
+                {
+                    question: "In a food chain, what are organisms that make their own food called?",
+                    options: ["Consumers", "Producers", "Decomposers", "Predators"],
+                    correct: 1,
+                    explanation: "Producers (like plants) make their own food through photosynthesis. They're the base of all food chains!"
+                },
+                {
+                    question: "Which part is found ONLY in plant cells and NOT in animal cells?",
+                    options: ["Nucleus", "Cell membrane", "Chloroplasts", "Cytoplasm"],
+                    correct: 2,
+                    explanation: "Chloroplasts contain chlorophyll (the green stuff) and are only found in plant cells. They're what allow plants to do photosynthesis!"
+                }
+            ]
+        };
+        
+        // Custom quiz class for Chapter 3
+        class Chapter3Quiz extends ScienceQuiz {
+            getQuizData() {
+                return chapter3QuizData;
+            }
+            
+            getChapterNumber() {
+                return 3;
+            }
+        }
+        
+        // Initialize Chapter 3 quiz
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('quiz-container')) {
+                new Chapter3Quiz();
+            }
+            addPageAnimations();
+        });
+    </script>
+    <script src="quiz.js"></script>
+</body>
+</html>

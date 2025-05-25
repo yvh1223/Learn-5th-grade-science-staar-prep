@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Water Cycle & Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .water-cycle-diagram { background: linear-gradient(135deg, #87CEEB, #E0F6FF); border-radius: 15px; padding: 30px; margin: 30px 0; text-align: center; }
+        .cycle-components { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .cycle-step { background: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .cycle-step:hover { transform: translateY(-5px); }
+        .evaporation { border-left: 5px solid #FF6B6B; }
+        .condensation { border-left: 5px solid #4ECDC4; }
+        .precipitation { border-left: 5px solid #45B7D1; }
+        .collection { border-left: 5px solid #96CEB4; }
+        .step-icon { font-size: 3em; margin-bottom: 15px; }
+        .weather-instruments { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+        .instrument-card { background: white; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .instrument-card:hover { transform: translateY(-5px); }
+        .instrument-icon { font-size: 3em; margin-bottom: 15px; }
+        .cloud-types { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 30px; margin: 30px 0; }
+        .clouds-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0; }
+        .cloud-card { background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; text-align: center; }
+        .cloud-visual { font-size: 3em; margin-bottom: 15px; }
+        .weather-vs-climate { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+        .weather-card { background: linear-gradient(135deg, #FFD93D, #FF6B6B); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        .climate-card { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; border-radius: 15px; padding: 25px; text-align: center; }
+        @media (max-width: 768px) { .weather-vs-climate { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌊 Chapter 5: Water Cycle & Weather</h1>
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Home</a> → <a href="chapter4.html">Chapter 4</a> → Chapter 5
+            </div>
+        </div>
+
+        <div class="lesson-content">
+            <div class="intro-section">
+                <h2>☔ Discover Earth's Amazing Water Story!</h2>
+                <p>Water is constantly moving around our planet in an endless journey! From oceans to clouds to rain and back again, the water cycle powers our weather and gives life to everything on Earth. Let's explore this incredible system!</p>
+            </div>
+
+            <div class="water-cycle-diagram">
+                <h3>💧 The Amazing Water Cycle</h3>
+                <p>Follow water on its incredible journey around our planet!</p>
+                
+                <div style="font-size: 2em; margin: 20px 0;">☀️ → 🌊 → ☁️ → 🌧️ → 🌊</div>
+                
+                <div class="cycle-components">
+                    <div class="cycle-step evaporation">
+                        <div class="step-icon">☀️💨</div>
+                        <h4>1. Evaporation</h4>
+                        <p><strong>What happens:</strong> Sun heats water in oceans, lakes, and rivers</p>
+                        <p><strong>Result:</strong> Water changes from liquid to invisible water vapor (gas)</p>
+                        <p><strong>Where:</strong> Oceans provide 86% of all evaporation!</p>
+                    </div>
+                    
+                    <div class="cycle-step condensation">
+                        <div class="step-icon">☁️</div>
+                        <h4>2. Condensation</h4>
+                        <p><strong>What happens:</strong> Water vapor rises and cools in the atmosphere</p>
+                        <p><strong>Result:</strong> Water vapor changes back to tiny liquid droplets</p>
+                        <p><strong>Where:</strong> Forms clouds and fog in the sky!</p>
+                    </div>
+                    
+                    <div class="cycle-step precipitation">
+                        <div class="step-icon">🌧️</div>
+                        <h4>3. Precipitation</h4>
+                        <p><strong>What happens:</strong> Water droplets in clouds grow bigger and heavier</p>
+                        <p><strong>Result:</strong> Water falls as rain, snow, sleet, or hail</p>
+                        <p><strong>Where:</strong> All over Earth's surface!</p>
+                    </div>
+                    
+                    <div class="cycle-step collection">
+                        <div class="step-icon">🌊</div>
+                        <h4>4. Collection</h4>
+                        <p><strong>What happens:</strong> Water flows back to oceans, lakes, and underground</p>
+                        <p><strong>Result:</strong> Water collects in bodies of water</p>
+                        <p><strong>Where:</strong> Rivers, streams, groundwater, and oceans!</p>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.7); padding: 15px; border-radius: 10px; margin-top: 20px; color: #333;">
+                    <strong>🔄 Amazing Fact:</strong> The same water that dinosaurs drank 100 million years ago is still cycling through our planet today!
+                </div>
+            </div>
+
+            <div class="cloud-types">
+                <h3>☁️ Types of Clouds - Nature's Weather Predictors!</h3>
+                <p>Clouds tell us what weather is coming! Each type has its own shape, height, and weather story.</p>
+                
+                <div class="clouds-grid">
+                    <div class="cloud-card">
+                        <div class="cloud-visual">☁️</div>
+                        <h4>Cumulus Clouds</h4>
+                        <p><strong>Look like:</strong> Fluffy cotton balls</p>
+                        <p><strong>Height:</strong> Low to middle</p>
+                        <p><strong>Weather:</strong> Fair, sunny weather</p>
+                        <p><strong>Fun fact:</strong> "Fair weather" clouds!</p>
+                    </div>
+                    
+                    <div class="cloud-card">
+                        <div class="cloud-visual">🌫️</div>
+                        <h4>Stratus Clouds</h4>
+                        <p><strong>Look like:</strong> Gray blankets covering the sky</p>
+                        <p><strong>Height:</strong> Low</p>
+                        <p><strong>Weather:</strong> Light rain or drizzle</p>
+                        <p><strong>Fun fact:</strong> Can create fog when very low!</p>
+                    </div>
+                    
+                    <div class="cloud-card">
+                        <div class="cloud-visual">🌩️</div>
+                        <h4>Cumulonimbus Clouds</h4>
+                        <p><strong>Look like:</strong> Tall, towering anvil shapes</p>
+                        <p><strong>Height:</strong> Extend through all levels</p>
+                        <p><strong>Weather:</strong> Thunderstorms, heavy rain, hail</p>
+                        <p><strong>Fun fact:</strong> Can reach 60,000 feet high!</p>
+                    </div>
+                    
+                    <div class="cloud-card">
+                        <div class="cloud-visual">🎭</div>
+                        <h4>Cirrus Clouds</h4>
+                        <p><strong>Look like:</strong> Thin, wispy feathers</p>
+                        <p><strong>Height:</strong> Very high (20,000+ feet)</p>
+                        <p><strong>Weather:</strong> Weather change coming in 24-48 hours</p>
+                        <p><strong>Fun fact:</strong> Made of ice crystals, not water droplets!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-instruments-section">
+                <h3>🔬 Weather Instruments - Tools for Weather Scientists!</h3>
+                <p>Meteorologists use special tools to measure and predict weather. Let's learn about these amazing instruments!</p>
+                
+                <div class="weather-instruments">
+                    <div class="instrument-card">
+                        <div class="instrument-icon">🌡️</div>
+                        <h4>Thermometer</h4>
+                        <p><strong>Measures:</strong> Temperature</p>
+                        <p><strong>Units:</strong> Fahrenheit (°F) or Celsius (°C)</p>
+                        <p><strong>How it works:</strong> Liquid expands when hot, contracts when cold</p>
+                    </div>
+                    
+                    <div class="instrument-card">
+                        <div class="instrument-icon">🌪️</div>
+                        <h4>Barometer</h4>
+                        <p><strong>Measures:</strong> Air pressure</p>
+                        <p><strong>Units:</strong> Inches of mercury or millibars</p>
+                        <p><strong>How it works:</strong> Heavy air pushes down more than light air</p>
+                    </div>
+                    
+                    <div class="instrument-card">
+                        <div class="instrument-icon">🌬️</div>
+                        <h4>Anemometer</h4>
+                        <p><strong>Measures:</strong> Wind speed</p>
+                        <p><strong>Units:</strong> Miles per hour (mph) or knots</p>
+                        <p><strong>How it works:</strong> Cups spin faster when wind is stronger</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-vs-climate">
+                <div class="weather-card">
+                    <h3>🌤️ WEATHER</h3>
+                    <h4>What's happening RIGHT NOW</h4>
+                    <ul style="text-align: left;">
+                        <li>Changes daily or hourly</li>
+                        <li>Short-term conditions</li>
+                        <li>What you wear today</li>
+                        <li>Examples: sunny, rainy, snowy, windy</li>
+                        <li>Can be predicted 5-7 days ahead</li>
+                    </ul>
+                    <p style="margin-top: 20px;"><strong>Memory trick:</strong> Weather = "Whether" to bring an umbrella today!</p>
+                </div>
+                
+                <div class="climate-card">
+                    <h3>🌍 CLIMATE</h3>
+                    <h4>Long-term weather PATTERNS</h4>
+                    <ul style="text-align: left;">
+                        <li>Average weather over 30+ years</li>
+                        <li>Long-term patterns</li>
+                        <li>What you expect each season</li>
+                        <li>Examples: tropical, desert, temperate</li>
+                        <li>Changes over decades or centuries</li>
+                    </ul>
+                    <p style="margin-top: 20px;"><strong>Memory trick:</strong> Climate = "Clothing" you need for the whole year!</p>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>🤯 Amazing Weather & Water Facts!</h4>
+                <ul>
+                    <li>🌧️ A raindrop falls at about 17 mph - no faster because of air resistance!</li>
+                    <li>⚡ Lightning is 5 times hotter than the sun's surface!</li>
+                    <li>❄️ No two snowflakes are exactly alike!</li>
+                    <li>🌀 A hurricane releases energy equal to 200 times the world's electrical capacity!</li>
+                    <li>💧 Earth has the same amount of water today as it did 3 billion years ago!</li>
+                    <li>☁️ Clouds can weigh over 1 million pounds but still float!</li>
+                </ul>
+            </div>
+
+            <div class="experiment-box">
+                <h3>🧪 Try This: Weather Station Experiment!</h3>
+                <div class="experiment-content">
+                    <h4>🎯 Goal: Build your own weather station!</h4>
+                    <p><strong>📋 Materials:</strong> Clear plastic bottle (rain gauge), ruler and permanent marker, thermometer, weather journal</p>
+                    <p><strong>📋 Instructions:</strong></p>
+                    <ol>
+                        <li>Cut the top off the plastic bottle</li>
+                        <li>Mark measurement lines every ¼ inch</li>
+                        <li>Place outside to collect rain</li>
+                        <li>Record daily temperature and rainfall</li>
+                        <li>Observe and draw cloud types</li>
+                        <li>Track weather patterns for one week!</li>
+                    </ol>
+                    <p><strong>🤔 Think About:</strong> How does the weather change throughout the week? Can you predict tomorrow's weather based on today's clouds?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>🧠 Test Your Knowledge!</h2>
+            <div id="quiz-container">
+                <!-- Quiz questions will be generated by JavaScript -->
+            </div>
+            <div class="quiz-controls">
+                <button id="prev-btn" class="btn" disabled>⬅️ Previous</button>
+                <button id="next-btn" class="btn">Next ➡️</button>
+                <button id="submit-btn" class="btn btn-primary" style="display: none;">Submit Quiz 🎯</button>
+            </div>
+            <div id="quiz-results" class="results" style="display: none;">
+                <h3>🎉 Quiz Results</h3>
+                <div id="score-display"></div>
+                <div id="answers-review"></div>
+            </div>
+        </div>
+
+        <!-- Enhanced Study Materials Section -->
+        <div class="enhanced-study-section" style="background: linear-gradient(135deg, #e1f5fe, #b3e5fc); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center; border: 3px solid #0288d1;">
+            <h2 style="color: #01579b; margin-bottom: 20px;">🎯 Enhanced STAAR Test Prep Resources</h2>
+            <p style="font-size: 1.2em; margin-bottom: 25px; color: #0277bd;">Master Water Cycle & Weather concepts with our enhanced study tools!</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+                <a href="chapter5_study_guide_enhanced.html" class="btn btn-primary" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #0288d1, #0277bd); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📚 Enhanced Study Guide<br><small style="opacity: 0.9;">Memory tricks & STAAR tips</small></a>
+                
+                <a href="chapter5_practice_test.html" class="btn btn-success" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #00bcd4, #0097a7); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📝 Practice Test<br><small style="opacity: 0.9;">STAAR-format questions</small></a>
+                
+                <a href="test_strategies.html" class="btn btn-warning" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #ffc107, #ff8f00); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">🎯 Test Strategies<br><small style="opacity: 0.9;">Score higher on STAAR</small></a>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                <p style="margin: 0; color: #01579b;"><strong>🌟 New!</strong> These enhanced materials include STAAR score targets, memory tricks, and test-taking strategies to help you achieve 250+ scale score success!</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter4.html" class="btn">⬅️ Previous: Matter & Energy</a>
+            <a href="index.html" class="btn">🏠 Back to Home</a>
+            <a href="final_review.html" class="btn btn-next">Final Review 🎓</a>
+        </div>
+    </div>
+
+    <script>
+        // Chapter 5 Quiz Data
+        const chapter5QuizData = {
+            questions: [
+                {
+                    question: "What is the process called when water changes from a liquid to a gas?",
+                    options: ["Condensation", "Precipitation", "Evaporation", "Collection"],
+                    correct: 2,
+                    explanation: "Evaporation occurs when the sun heats water and it changes from liquid to invisible water vapor!"
+                },
+                {
+                    question: "Which type of cloud is most likely to bring thunderstorms?",
+                    options: ["Cumulus", "Stratus", "Cirrus", "Cumulonimbus"],
+                    correct: 3,
+                    explanation: "Cumulonimbus clouds are tall, towering clouds that bring thunderstorms, heavy rain, and sometimes hail!"
+                },
+                {
+                    question: "What weather instrument measures air pressure?",
+                    options: ["Thermometer", "Barometer", "Anemometer", "Hygrometer"],
+                    correct: 1,
+                    explanation: "A barometer measures air pressure, which helps predict weather changes!"
+                },
+                {
+                    question: "What is the main difference between weather and climate?",
+                    options: ["Weather is hot, climate is cold", "Weather is short-term, climate is long-term patterns", "Weather is measured, climate is guessed", "There is no difference"],
+                    correct: 1,
+                    explanation: "Weather is what's happening right now (short-term), while climate is the long-term average weather patterns over 30+ years!"
+                },
+                {
+                    question: "During which step of the water cycle do clouds form?",
+                    options: ["Evaporation", "Condensation", "Precipitation", "Collection"],
+                    correct: 1,
+                    explanation: "Condensation is when water vapor cools and changes back to tiny water droplets, forming clouds!"
+                }
+            ]
+        };
+        
+        // Custom quiz class for Chapter 5
+        class Chapter5Quiz extends ScienceQuiz {
+            getQuizData() {
+                return chapter5QuizData;
+            }
+            
+            getChapterNumber() {
+                return 5;
+            }
+        }
+        
+        // Initialize Chapter 5 quiz
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('quiz-container')) {
+                new Chapter5Quiz();
+            }
+            addPageAnimations();
+        });
+    </script>
+    <script src="quiz.js"></script>
+</body>
+</html>

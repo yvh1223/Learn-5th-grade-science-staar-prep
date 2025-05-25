@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Matter & Energy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .states-of-matter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .state-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 3px solid;
+        }
+        
+        .state-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .solid-card { border-color: #2196F3; background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+        .liquid-card { border-color: #9C27B0; background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
+        .gas-card { border-color: #FF9800; background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
+        
+        .state-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .particle-demo {
+            width: 120px;
+            height: 80px;
+            margin: 20px auto;
+            border: 2px dashed #666;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solid-particles {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2px;
+            padding: 10px;
+            height: 100%;
+        }
+        
+        .particle {
+            background: #2196F3;
+            border-radius: 3px;
+            width: 12px;
+            height: 12px;
+        }
+        
+        .liquid-particles {
+            position: relative;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 20%, #9C27B0 20%, #9C27B0 100%);
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .liquid-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .liquid-particle:nth-child(1) { top: 30px; left: 20px; animation-delay: 0s; }
+        .liquid-particle:nth-child(2) { top: 45px; right: 25px; animation-delay: 1s; }
+        .liquid-particle:nth-child(3) { bottom: 20px; left: 35px; animation-delay: 2s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gas-particles {
+            position: relative;
+            height: 100%;
+        }
+        
+        .gas-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #FF9800;
+            border-radius: 50%;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .gas-particle:nth-child(1) { top: 10px; left: 15px; animation-delay: 0s; }
+        .gas-particle:nth-child(2) { top: 30px; right: 20px; animation-delay: 0.5s; }
+        .gas-particle:nth-child(3) { bottom: 25px; left: 40px; animation-delay: 1s; }
+        .gas-particle:nth-child(4) { top: 50px; left: 70px; animation-delay: 1.5s; }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(10px, -5px); }
+            50% { transform: translate(-5px, 10px); }
+            75% { transform: translate(8px, 5px); }
+        }
+        
+        .state-changes {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .change-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .state-item {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 100px;
+        }
+        
+        .change-arrow {
+            background: #e53935;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .reverse-flow {
+            margin-top: 20px;
+        }
+        
+        .reverse-arrow {
+            background: #1976d2;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .energy-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .energy-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-left: 5px solid;
+        }
+        
+        .energy-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .light-energy { border-left-color: #FFD700; background: linear-gradient(135deg, #fff9c4, #fff59d); }
+        .sound-energy { border-left-color: #9C27B0; background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
+        .motion-energy { border-left-color: #4CAF50; background: linear-gradient(135deg, #e8f5e8, #c8e6c9); }
+        .heat-energy { border-left-color: #f44336; background: linear-gradient(135deg, #ffebee, #ffcdd2); }
+        .electrical-energy { border-left-color: #2196F3; background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+        .chemical-energy { border-left-color: #8BC34A; background: linear-gradient(135deg, #f1f8e9, #dcedc8); }
+        
+        .energy-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .energy-transformations {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .transformation-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .transformation-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .transformation-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .energy-type {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        .transform-arrow {
+            font-size: 1.5em;
+            color: #FFD700;
+        }
+        
+        .conservation-law {
+            background: linear-gradient(135deg, #ffd54f, #ffb74d);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ Chapter 4: Matter & Energy</h1>
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Home</a> → <a href="chapter3.html">Chapter 3</a> → Chapter 4
+            </div>
+        </div>
+
+        <div class="lesson-content">
+            <div class="intro-section">
+                <h2>⚛️ Explore the Building Blocks of Everything!</h2>
+                <p>Everything around you is made of matter, and energy is what makes things happen! From the air you breathe to the stars in the sky, let's discover how matter behaves and how energy powers our amazing world!</p>
+            </div>
+
+            <div class="diagram-section">
+                <h3>🧊💧💨 The Three States of Matter</h3>
+                <p>All matter exists in three main states, and it all depends on how fast the tiny particles are moving!</p>
+                
+                <div class="states-of-matter">
+                    <div class="state-card solid-card">
+                        <div class="state-icon">🧊</div>
+                        <h4>SOLID</h4>
+                        <div class="particle-demo">
+                            <div class="solid-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                        <div style="text-align: left;">
+                            <h5>🔒 Particle Behavior:</h5>
+                            <ul>
+                                <li>Packed very tightly together</li>
+                                <li>Vibrate in place (barely move)</li>
+                                <li>Strong forces hold them together</li>
+                            </ul>
+                            <h5>📏 Properties:</h5>
+                            <ul>
+                                <li>Keeps its shape</li>
+                                <li>Has definite volume</li>
+                                <li>Cannot be compressed</li>
+                                <li>Examples: ice, rock, metal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="state-card liquid-card">
+                        <div class="state-icon">💧</div>
+                        <h4>LIQUID</h4>
+                        <div class="particle-demo">
+                            <div class="liquid-particles">
+                                <div class="liquid-particle"></div>
+                                <div class="liquid-particle"></div>
+                                <div class="liquid-particle"></div>
+                            </div>
+                        </div>
+                        <div style="text-align: left;">
+                            <h5>🌊 Particle Behavior:</h5>
+                            <ul>
+                                <li>Close together but can move</li>
+                                <li>Slide past each other freely</li>
+                                <li>Weaker forces than solids</li>
+                            </ul>
+                            <h5>📏 Properties:</h5>
+                            <ul>
+                                <li>Takes shape of container</li>
+                                <li>Has definite volume</li>
+                                <li>Flows easily</li>
+                                <li>Examples: water, milk, oil</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="state-card gas-card">
+                        <div class="state-icon">💨</div>
+                        <h4>GAS</h4>
+                        <div class="particle-demo">
+                            <div class="gas-particles">
+                                <div class="gas-particle"></div>
+                                <div class="gas-particle"></div>
+                                <div class="gas-particle"></div>
+                                <div class="gas-particle"></div>
+                            </div>
+                        </div>
+                        <div style="text-align: left;">
+                            <h5>🎈 Particle Behavior:</h5>
+                            <ul>
+                                <li>Spread far apart</li>
+                                <li>Move very fast in all directions</li>
+                                <li>Very weak forces between them</li>
+                            </ul>
+                            <h5>📏 Properties:</h5>
+                            <ul>
+                                <li>Fills entire container</li>
+                                <li>No definite shape or volume</li>
+                                <li>Can be compressed</li>
+                                <li>Examples: air, steam, helium</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="state-changes">
+                <h3>🌡️ How Matter Changes States</h3>
+                <p>When you add or remove heat, matter can change from one state to another! It's like magic, but it's science!</p>
+                
+                <div class="change-flow">
+                    <div class="state-item">
+                        <div style="font-size: 2em;">🧊</div>
+                        <strong>SOLID</strong><br>
+                        <small>(Ice)</small>
+                    </div>
+                    <div class="change-arrow">ADD HEAT →<br><small>Melting</small></div>
+                    <div class="state-item">
+                        <div style="font-size: 2em;">💧</div>
+                        <strong>LIQUID</strong><br>
+                        <small>(Water)</small>
+                    </div>
+                    <div class="change-arrow">ADD HEAT →<br><small>Evaporation</small></div>
+                    <div class="state-item">
+                        <div style="font-size: 2em;">💨</div>
+                        <strong>GAS</strong><br>
+                        <small>(Steam)</small>
+                    </div>
+                </div>
+                
+                <div class="reverse-flow">
+                    <p><strong>🔄 Going Backwards (Cooling):</strong></p>
+                    <div class="change-flow">
+                        <div class="state-item">
+                            <div style="font-size: 2em;">💨</div>
+                            <strong>GAS</strong>
+                        </div>
+                        <div class="reverse-arrow">← REMOVE HEAT<br><small>Condensation</small></div>
+                        <div class="state-item">
+                            <div style="font-size: 2em;">💧</div>
+                            <strong>LIQUID</strong>
+                        </div>
+                        <div class="reverse-arrow">← REMOVE HEAT<br><small>Freezing</small></div>
+                        <div class="state-item">
+                            <div style="font-size: 2em;">🧊</div>
+                            <strong>SOLID</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.7); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                    <strong>🔬 Remember:</strong> The matter stays the same - only the arrangement and movement of particles changes!<br>
+                    <strong>🌡️ Temperature:</strong> Measures how fast particles are moving!
+                </div>
+            </div>
+
+            <div class="energy-section">
+                <h3>⚡ Amazing Forms of Energy</h3>
+                <p>Energy is everywhere! It's what makes things move, gives us light, and powers our world. Let's explore the different types of energy around us!</p>
+                
+                <div class="energy-types">
+                    <div class="energy-card light-energy">
+                        <div class="energy-icon">☀️</div>
+                        <h4>Light Energy</h4>
+                        <p><strong>What it is:</strong> Energy we can see</p>
+                        <p><strong>Examples:</strong> Sun, light bulbs, fire, lasers</p>
+                        <p><strong>Cool fact:</strong> Light travels 186,000 miles per second!</p>
+                    </div>
+                    
+                    <div class="energy-card sound-energy">
+                        <div class="energy-icon">🔊</div>
+                        <h4>Sound Energy</h4>
+                        <p><strong>What it is:</strong> Energy from vibrations we hear</p>
+                        <p><strong>Examples:</strong> Music, voices, thunder, car engines</p>
+                        <p><strong>Cool fact:</strong> Sound travels faster through water than air!</p>
+                    </div>
+                    
+                    <div class="energy-card motion-energy">
+                        <div class="energy-icon">🏃</div>
+                        <h4>Motion Energy</h4>
+                        <p><strong>What it is:</strong> Energy of moving objects</p>
+                        <p><strong>Examples:</strong> Running, cars, spinning wheels, wind</p>
+                        <p><strong>Cool fact:</strong> The faster something moves, the more energy it has!</p>
+                    </div>
+                    
+                    <div class="energy-card heat-energy">
+                        <div class="energy-icon">🔥</div>
+                        <h4>Heat Energy</h4>
+                        <p><strong>What it is:</strong> Energy that makes things warm</p>
+                        <p><strong>Examples:</strong> Fire, hot stove, friction, body heat</p>
+                        <p><strong>Cool fact:</strong> Heat always moves from hot to cold objects!</p>
+                    </div>
+                    
+                    <div class="energy-card electrical-energy">
+                        <div class="energy-icon">⚡</div>
+                        <h4>Electrical Energy</h4>
+                        <p><strong>What it is:</strong> Energy from moving electrons</p>
+                        <p><strong>Examples:</strong> Lightning, batteries, power lines</p>
+                        <p><strong>Cool fact:</strong> Lightning is 5 times hotter than the sun!</p>
+                    </div>
+                    
+                    <div class="energy-card chemical-energy">
+                        <div class="energy-icon">🍎</div>
+                        <h4>Chemical Energy</h4>
+                        <p><strong>What it is:</strong> Energy stored in substances</p>
+                        <p><strong>Examples:</strong> Food, batteries, gasoline, fireworks</p>
+                        <p><strong>Cool fact:</strong> Your body converts food into energy for everything you do!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="energy-transformations">
+                <h3>🔄 Energy Transformations - Energy Changes Form!</h3>
+                <p>Energy is like a shape-shifter - it can change from one form to another, but it never disappears!</p>
+                
+                <div class="transformation-examples">
+                    <div class="transformation-card">
+                        <h4>🍎 Eating Food</h4>
+                        <div class="transformation-flow">
+                            <div class="energy-type">Chemical Energy<br>(Food)</div>
+                            <div class="transform-arrow">→</div>
+                            <div class="energy-type">Motion Energy<br>(Running)</div>
+                        </div>
+                        <p><small>Your body converts food energy into energy for movement!</small></p>
+                    </div>
+                    
+                    <div class="transformation-card">
+                        <h4>🔦 Flashlight</h4>
+                        <div class="transformation-flow">
+                            <div class="energy-type">Chemical Energy<br>(Batteries)</div>
+                            <div class="transform-arrow">→</div>
+                            <div class="energy-type">Light Energy<br>(Bulb)</div>
+                        </div>
+                        <p><small>Battery chemicals create electricity that makes light!</small></p>
+                    </div>
+                    
+                    <div class="transformation-card">
+                        <h4>🎸 Playing Guitar</h4>
+                        <div class="transformation-flow">
+                            <div class="energy-type">Motion Energy<br>(Plucking strings)</div>
+                            <div class="transform-arrow">→</div>
+                            <div class="energy-type">Sound Energy<br>(Music)</div>
+                        </div>
+                        <p><small>Moving strings create vibrations we hear as music!</small></p>
+                    </div>
+                    
+                    <div class="transformation-card">
+                        <h4>🚗 Car Engine</h4>
+                        <div class="transformation-flow">
+                            <div class="energy-type">Chemical Energy<br>(Gasoline)</div>
+                            <div class="transform-arrow">→</div>
+                            <div class="energy-type">Motion Energy<br>(Moving car)</div>
+                        </div>
+                        <p><small>Burning fuel creates power to move the car!</small></p>
+                    </div>
+                    
+                    <div class="transformation-card">
+                        <h4>🏠 Solar Panel</h4>
+                        <div class="transformation-flow">
+                            <div class="energy-type">Light Energy<br>(Sunlight)</div>
+                            <div class="transform-arrow">→</div>
+                            <div class="energy-type">Electrical Energy<br>(Electricity)</div>
+                        </div>
+                        <p><small>Solar panels capture sun energy to power homes!</small></p>
+                    </div>
+                    
+                    <div class="transformation-card">
+                        <h4>🤲 Rubbing Hands</h4>
+                        <div class="transformation-flow">
+                            <div class="energy-type">Motion Energy<br>(Rubbing)</div>
+                            <div class="transform-arrow">→</div>
+                            <div class="energy-type">Heat Energy<br>(Warm hands)</div>
+                        </div>
+                        <p><small>Friction from rubbing creates heat energy!</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conservation-law">
+                <h3>♻️ The Law of Conservation of Energy</h3>
+                <div style="font-size: 2em; margin: 20px 0;">⚡ = ⚡</div>
+                <h4>Energy can NEVER be created or destroyed!</h4>
+                <p style="font-size: 1.2em; margin: 15px 0;">It can only change from one form to another!</p>
+                
+                <div style="background: rgba(255,255,255,0.7); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h5>🌟 What this means:</h5>
+                    <ul style="text-align: left; display: inline-block;">
+                        <li>The total amount of energy in the universe stays the same</li>
+                        <li>When energy seems to "disappear," it just changed form</li>
+                        <li>Energy is constantly transforming all around us</li>
+                        <li>This is one of the most important laws in science!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>🤯 Mind-Blowing Matter & Energy Facts!</h4>
+                <ul>
+                    <li>⚛️ All matter is made of tiny particles called atoms!</li>
+                    <li>🌡️ At -273°C (absolute zero), all particle motion stops!</li>
+                    <li>💎 Diamond is the hardest natural solid on Earth!</li>
+                    <li>⚡ Lightning contains enough energy to power a house for 2 weeks!</li>
+                    <li>🌟 The sun converts 4 million tons of matter into energy every second!</li>
+                    <li>💨 At room temperature, air molecules move at about 1,000 mph!</li>
+                </ul>
+            </div>
+
+            <div class="experiment-box">
+                <h3>🧪 Try This: Energy Transformation Experiments!</h3>
+                <div class="experiment-content">
+                    <h4>🎯 Experiment 1: Rubber Band Energy</h4>
+                    <p><strong>📋 Materials:</strong> Rubber band, small object to launch</p>
+                    <p><strong>📋 Instructions:</strong></p>
+                    <ol>
+                        <li>Stretch the rubber band (storing potential energy)</li>
+                        <li>Let it go to launch the object (potential → motion energy)</li>
+                        <li>Notice how far it goes based on how much you stretch it!</li>
+                    </ol>
+                    
+                    <h4>🎯 Experiment 2: Ice Cube Melting Race</h4>
+                    <p><strong>📋 Materials:</strong> 3 ice cubes, different surfaces (metal, wood, plastic)</p>
+                    <p><strong>📋 Instructions:</strong></p>
+                    <ol>
+                        <li>Place one ice cube on each surface</li>
+                        <li>Time how fast each one melts</li>
+                        <li>Which surface transfers heat energy fastest?</li>
+                    </ol>
+                    
+                    <p><strong>🤔 Think About:</strong> How do you see energy transformations in your daily life?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>🧠 Test Your Knowledge!</h2>
+            <div id="quiz-container">
+                <!-- Quiz questions will be generated by JavaScript -->
+            </div>
+            <div class="quiz-controls">
+                <button id="prev-btn" class="btn" disabled>⬅️ Previous</button>
+                <button id="next-btn" class="btn">Next ➡️</button>
+                <button id="submit-btn" class="btn btn-primary" style="display: none;">Submit Quiz 🎯</button>
+            </div>
+            <div id="quiz-results" class="results" style="display: none;">
+                <h3>🎉 Quiz Results</h3>
+                <div id="score-display"></div>
+                <div id="answers-review"></div>
+            </div>
+        </div>
+
+        <!-- Enhanced Study Materials Section -->
+        <div class="enhanced-study-section" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center; border: 3px solid #2196F3;">
+            <h2 style="color: #1565c0; margin-bottom: 20px;">🎯 Enhanced STAAR Test Prep Resources</h2>
+            <p style="font-size: 1.2em; margin-bottom: 25px; color: #0d47a1;">Master Matter & Energy concepts with our enhanced study tools!</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
+                <a href="chapter4_study_guide_enhanced.html" class="btn btn-primary" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #2196F3, #1976D2); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📚 Enhanced Study Guide<br><small style="opacity: 0.9;">Memory tricks & STAAR tips</small></a>
+                
+                <a href="chapter4_practice_test.html" class="btn btn-success" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #FF9800, #F57C00); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📝 Practice Test<br><small style="opacity: 0.9;">STAAR-format questions</small></a>
+                
+                <a href="test_strategies.html" class="btn btn-warning" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #4CAF50, #45a049); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">🎯 Test Strategies<br><small style="opacity: 0.9;">Score higher on STAAR</small></a>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                <p style="margin: 0; color: #1565c0;"><strong>🌟 New!</strong> These enhanced materials include STAAR score targets, memory tricks, and test-taking strategies to help you achieve 250+ scale score success!</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="chapter3.html" class="btn">⬅️ Previous: Living Systems</a>
+            <a href="index.html" class="btn">🏠 Back to Home</a>
+            <a href="chapter5.html" class="btn btn-next">Next: Water Cycle & Weather 🌊</a>
+        </div>
+    </div>
+
+    <script>
+        // Chapter 4 Quiz Data
+        const chapter4QuizData = {
+            questions: [
+                {
+                    question: "In which state of matter are particles packed most tightly together?",
+                    options: ["Gas", "Liquid", "Solid", "Plasma"],
+                    correct: 2,
+                    explanation: "In solids, particles are packed very tightly together and can only vibrate in place!"
+                },
+                {
+                    question: "What happens when you add heat to ice?",
+                    options: ["It becomes gas", "It melts into liquid water", "It gets harder", "Nothing happens"],
+                    correct: 1,
+                    explanation: "Adding heat energy to ice makes the particles move faster until they break free and become liquid water!"
+                },
+                {
+                    question: "Which is an example of chemical energy?",
+                    options: ["A moving car", "Food and batteries", "A bright light", "Sound from a radio"],
+                    correct: 1,
+                    explanation: "Food and batteries store chemical energy in their molecules, which can be released when needed!"
+                },
+                {
+                    question: "According to the Law of Conservation of Energy, energy cannot be:",
+                    options: ["Transferred from one object to another", "Transformed from one type to another", "Created or destroyed", "Measured accurately"],
+                    correct: 2,
+                    explanation: "Energy can never be created or destroyed - it can only change from one form to another!"
+                },
+                {
+                    question: "When you rub your hands together quickly, motion energy transforms into:",
+                    options: ["Light energy", "Sound energy", "Heat energy", "Chemical energy"],
+                    correct: 2,
+                    explanation: "Friction from rubbing creates heat energy, which is why your hands get warm!"
+                }
+            ]
+        };
+        
+        // Custom quiz class for Chapter 4
+        class Chapter4Quiz extends ScienceQuiz {
+            getQuizData() {
+                return chapter4QuizData;
+            }
+            
+            getChapterNumber() {
+                return 4;
+            }
+        }
+        
+        // Initialize Chapter 4 quiz
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('quiz-container')) {
+                new Chapter4Quiz();
+            }
+            addPageAnimations();
+        });
+    </script>
+    <script src="quiz.js"></script>
+</body>
+</html>
