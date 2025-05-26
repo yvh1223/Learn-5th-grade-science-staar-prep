@@ -4,88 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehensive STAAR Practice Exam</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        .exam-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .timer-display {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #4a90e2;
-            z-index: 1000;
-        }
-        .question-card {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .question-number {
-            background: #4a90e2;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        .chapter-tag {
-            background: #f0f0f0;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8em;
-            color: #666;
-            float: right;
-        }
-        .answer-option {
-            display: block;
-            padding: 10px 15px;
-            margin: 8px 0;
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .answer-option:hover {
-            background: #e3f2fd;
-            border-color: #2196F3;
-        }
-        .answer-option.selected {
-            background: #e3f2fd;
-            border-color: #2196F3;
-        }
-        .btn {
-            background: #4a90e2;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: bold;
-            margin: 10px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .exam-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 20px; text-align: center; margin-bottom: 30px; }
+        .timer-display { position: fixed; top: 20px; right: 20px; background: white; padding: 15px 25px; border-radius: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-weight: bold; font-size: 1.2em; color: #4a90e2; z-index: 1000; }
+        .question-card { background: white; border-radius: 15px; padding: 20px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .question-number { background: #4a90e2; color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        .chapter-tag { background: #f0f0f0; padding: 4px 12px; border-radius: 15px; font-size: 0.8em; color: #666; float: right; }
+        .answer-option { display: block; padding: 10px 15px; margin: 8px 0; background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
+        .answer-option:hover { background: #e3f2fd; border-color: #2196F3; }
+        .answer-option.selected { background: #e3f2fd; border-color: #2196F3; }
+        .btn { background: #4a90e2; color: white; padding: 12px 25px; border: none; border-radius: 25px; cursor: pointer; font-size: 1.1em; font-weight: bold; margin: 10px; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
         .btn:hover { background: #357abd; }
         .btn-success { background: #4CAF50; }
         .btn-warning { background: #ff9800; }
+        .navigation { text-align: center; margin: 30px 0; }
     </style>
 </head>
 <body>
@@ -97,6 +32,9 @@
         <div class="exam-header">
             <h1>🧪 Comprehensive STAAR Practice Exam</h1>
             <p>Sample Questions from All 5 Chapters</p>
+            <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">
+                🎯 Target: Score 75%+ for STAAR "Meets Grade Level"
+            </div>
         </div>
 
         <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
@@ -112,10 +50,10 @@
                 <div class="chapter-tag">Scientific Method</div>
                 <p><strong>What is the FIRST step in the scientific method?</strong></p>
                 <label class="answer-option">
-                    <input type="radio" name="q1" value="B"> B. Ask a question
+                    <input type="radio" name="q1" value="A"> A. Form a hypothesis
                 </label>
                 <label class="answer-option">
-                    <input type="radio" name="q1" value="A"> A. Form a hypothesis
+                    <input type="radio" name="q1" value="B"> B. Ask a question
                 </label>
                 <label class="answer-option">
                     <input type="radio" name="q1" value="C"> C. Conduct an experiment
@@ -128,12 +66,12 @@
             <div class="question-card">
                 <div class="question-number">2</div>
                 <div class="chapter-tag">Scientific Tools</div>
-                <p><strong>Which tool measures mass?</strong></p>
-                <label class="answer-option">
-                    <input type="radio" name="q2" value="B"> B. Balance
-                </label>
+                <p><strong>Which tool would you use to measure the mass of a rock?</strong></p>
                 <label class="answer-option">
                     <input type="radio" name="q2" value="A"> A. Ruler
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q2" value="B"> B. Balance
                 </label>
                 <label class="answer-option">
                     <input type="radio" name="q2" value="C"> C. Graduated cylinder
@@ -146,30 +84,30 @@
             <div class="question-card">
                 <div class="question-number">3</div>
                 <div class="chapter-tag">Earth & Space</div>
-                <p><strong>What causes day and night?</strong></p>
-                <label class="answer-option">
-                    <input type="radio" name="q3" value="B"> B. Earth's rotation on its axis
-                </label>
+                <p><strong>What causes day and night on Earth?</strong></p>
                 <label class="answer-option">
                     <input type="radio" name="q3" value="A"> A. Earth's revolution around the Sun
                 </label>
                 <label class="answer-option">
-                    <input type="radio" name="q3" value="C"> C. The Moon's orbit
+                    <input type="radio" name="q3" value="B"> B. Earth's rotation on its axis
                 </label>
                 <label class="answer-option">
-                    <input type="radio" name="q3" value="D"> D. Solar flares
+                    <input type="radio" name="q3" value="C"> C. The Moon's orbit around Earth
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q3" value="D"> D. Solar flares from the Sun
                 </label>
             </div>
 
             <div class="question-card">
                 <div class="question-number">4</div>
                 <div class="chapter-tag">Living Systems</div>
-                <p><strong>How do plants make food?</strong></p>
-                <label class="answer-option">
-                    <input type="radio" name="q4" value="B"> B. Photosynthesis
-                </label>
+                <p><strong>How do plants make their own food?</strong></p>
                 <label class="answer-option">
                     <input type="radio" name="q4" value="A"> A. Respiration
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q4" value="B"> B. Photosynthesis
                 </label>
                 <label class="answer-option">
                     <input type="radio" name="q4" value="C"> C. Digestion
@@ -179,20 +117,93 @@
                 </label>
             </div>
 
-            <div style="background: #fff3e0; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
-                <p><strong>📝 Demo Version:</strong> Full exam would have 32 questions covering all topics.</p>
+            <div class="question-card">
+                <div class="question-number">5</div>
+                <div class="chapter-tag">Matter & Energy</div>
+                <p><strong>What happens to water when it changes from a liquid to a gas?</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q5" value="A"> A. Freezing
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q5" value="B"> B. Melting
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q5" value="C"> C. Evaporation
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q5" value="D"> D. Condensation
+                </label>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">6</div>
+                <div class="chapter-tag">Water Cycle</div>
+                <p><strong>Which step of the water cycle occurs when water vapor cools and forms clouds?</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q6" value="A"> A. Evaporation
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q6" value="B"> B. Condensation
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q6" value="C"> C. Precipitation
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q6" value="D"> D. Collection
+                </label>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">7</div>
+                <div class="chapter-tag">Observations</div>
+                <p><strong>A student says "The plant is 15 cm tall and has yellow leaves." Which part is a quantitative observation?</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q7" value="A"> A. "15 cm tall"
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q7" value="B"> B. "yellow leaves"
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q7" value="C"> C. "the plant"
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q7" value="D"> D. Both A and B
+                </label>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">8</div>
+                <div class="chapter-tag">Energy</div>
+                <p><strong>When you rub your hands together quickly, motion energy changes into:</strong></p>
+                <label class="answer-option">
+                    <input type="radio" name="q8" value="A"> A. Light energy
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q8" value="B"> B. Sound energy
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q8" value="C"> C. Heat energy
+                </label>
+                <label class="answer-option">
+                    <input type="radio" name="q8" value="D"> D. Chemical energy
+                </label>
+            </div>
+
+            <div style="background: #e3f2fd; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+                <p><strong>📝 Note:</strong> This is a shortened practice exam. The full STAAR Science test has 32 questions covering all topics in greater depth.</p>
             </div>
         </form>
 
         <div style="background: white; padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0;">
-            <button type="button" class="btn btn-warning" onclick="reviewAnswers()">📋 Review</button>
-            <button type="button" class="btn btn-success" onclick="submitExam()">✅ Submit</button>
+            <button type="button" class="btn btn-warning" onclick="reviewAnswers()">📋 Review Answers</button>
+            <button type="button" class="btn btn-success" onclick="submitExam()">✅ Submit Exam</button>
             <button type="button" class="btn" onclick="restartExam()">🔄 Restart</button>
         </div>
 
         <div id="results" style="display: none; background: white; padding: 30px; border-radius: 15px; margin: 30px 0;">
-            <h2>🎉 Results</h2>
+            <h2>🎉 Exam Results</h2>
             <div id="score-summary"></div>
+            <div id="answer-breakdown" style="margin-top: 20px;"></div>
         </div>
 
         <div class="navigation">
@@ -202,9 +213,23 @@
     </div>
 
     <script>
-        const TOTAL_QUESTIONS = 4;
-        const correctAnswers = { q1: 'B', q2: 'B', q3: 'B', q4: 'B' };
-        let timeRemaining = 45 * 60;
+        const TOTAL_QUESTIONS = 8;
+        const correctAnswers = { 
+            q1: 'B', q2: 'B', q3: 'B', q4: 'B', 
+            q5: 'C', q6: 'B', q7: 'A', q8: 'C' 
+        };
+        const explanations = {
+            q1: "The scientific method always starts with asking a question about something you observe.",
+            q2: "A balance measures mass (how much matter is in an object).",
+            q3: "Earth's rotation on its axis (spinning) causes day and night every 24 hours.",
+            q4: "Photosynthesis is how plants use sunlight, water, and carbon dioxide to make food.",
+            q5: "Evaporation is when liquid water changes to water vapor (gas).",
+            q6: "Condensation occurs when water vapor cools and forms tiny droplets in clouds.",
+            q7: "Quantitative observations include numbers and measurements like '15 cm tall'.",
+            q8: "Friction from rubbing creates heat energy, which is why your hands get warm."
+        };
+        
+        let timeRemaining = 45 * 60; // 45 minutes
         let timerInterval;
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -219,8 +244,18 @@
                 const seconds = timeRemaining % 60;
                 document.getElementById('time-display').textContent = 
                     `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                // Change color as time runs out
+                const timerDisplay = document.getElementById('timer');
+                if (timeRemaining <= 300) { // 5 minutes
+                    timerDisplay.style.color = '#f44336';
+                } else if (timeRemaining <= 600) { // 10 minutes
+                    timerDisplay.style.color = '#ff9800';
+                }
+                
                 if (timeRemaining <= 0) {
                     clearInterval(timerInterval);
+                    alert('Time is up! Submitting your exam...');
                     submitExam();
                 }
             }, 1000);
@@ -250,37 +285,106 @@
 
         function reviewAnswers() {
             let answered = 0;
+            let unanswered = [];
             for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
-                if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+                if (document.querySelector(`input[name="q${i}"]:checked`)) {
+                    answered++;
+                } else {
+                    unanswered.push(i);
+                }
             }
-            alert(`Progress: ${answered}/${TOTAL_QUESTIONS} questions answered`);
+            
+            let message = `Progress: ${answered}/${TOTAL_QUESTIONS} questions answered`;
+            if (unanswered.length > 0) {
+                message += `\n\nUnanswered questions: ${unanswered.join(', ')}`;
+            }
+            alert(message);
         }
 
         function submitExam() {
             clearInterval(timerInterval);
+            
             let score = 0;
+            let answers = {};
+            
             for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
                 const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                if (selected && selected.value === correctAnswers[`q${i}`]) score++;
+                const userAnswer = selected ? selected.value : null;
+                answers[`q${i}`] = userAnswer;
+                
+                if (userAnswer === correctAnswers[`q${i}`]) {
+                    score++;
+                }
             }
             
             const percentage = Math.round((score / TOTAL_QUESTIONS) * 100);
-            const staarEstimate = Math.round(1140 + (score / TOTAL_QUESTIONS) * (4948 - 1140));
+            
+            // Estimate STAAR scale score (approximate)
+            let staarEstimate;
+            if (percentage >= 85) staarEstimate = "4400+ (Masters)";
+            else if (percentage >= 70) staarEstimate = "4000-4379 (Meets)";
+            else if (percentage >= 50) staarEstimate = "3550-3999 (Approaches)";
+            else staarEstimate = "Below 3550 (Did Not Meet)";
+            
+            // Determine performance level
+            let performanceLevel = "";
+            let levelColor = "";
+            if (percentage >= 85) {
+                performanceLevel = "🏆 Masters Grade Level";
+                levelColor = "#4CAF50";
+            } else if (percentage >= 70) {
+                performanceLevel = "🎯 Meets Grade Level";
+                levelColor = "#2196F3";
+            } else if (percentage >= 50) {
+                performanceLevel = "📈 Approaches Grade Level";
+                levelColor = "#ff9800";
+            } else {
+                performanceLevel = "📚 Needs More Practice";
+                levelColor = "#f44336";
+            }
             
             document.getElementById('score-summary').innerHTML = `
                 <div style="text-align: center;">
-                    <div style="font-size: 3em; color: #4CAF50; margin: 20px 0;">${score}/${TOTAL_QUESTIONS}</div>
-                    <div style="font-size: 1.5em;">${percentage}% Correct</div>
+                    <div style="font-size: 4em; color: ${levelColor}; margin: 20px 0;">${score}/${TOTAL_QUESTIONS}</div>
+                    <div style="font-size: 2em; margin: 10px 0;">${percentage}% Correct</div>
+                    <div style="font-size: 1.3em; color: ${levelColor}; margin: 15px 0; font-weight: bold;">
+                        ${performanceLevel}
+                    </div>
                     <div style="margin: 20px 0; padding: 15px; background: #e3f2fd; border-radius: 10px;">
-                        <strong>Estimated STAAR Score: ${staarEstimate}</strong>
+                        <strong>Estimated STAAR Score Range: ${staarEstimate}</strong>
                     </div>
                 </div>
             `;
+            
+            // Show detailed breakdown
+            let breakdownHTML = '<h3>📋 Answer Breakdown:</h3><div style="text-align: left;">';
+            for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+                const userAnswer = answers[`q${i}`];
+                const correct = correctAnswers[`q${i}`];
+                const isCorrect = userAnswer === correct;
+                const icon = isCorrect ? '✅' : '❌';
+                const bgColor = isCorrect ? '#e8f5e8' : '#ffebee';
+                
+                breakdownHTML += `
+                    <div style="margin: 10px 0; padding: 15px; background: ${bgColor}; border-radius: 8px;">
+                        <strong>${icon} Question ${i}:</strong> 
+                        Your answer: ${userAnswer || 'Not answered'} | 
+                        Correct: ${correct}<br>
+                        <em>${explanations[`q${i}`]}</em>
+                    </div>
+                `;
+            }
+            breakdownHTML += '</div>';
+            
+            document.getElementById('answer-breakdown').innerHTML = breakdownHTML;
             document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
         }
 
         function restartExam() {
-            if (confirm('Restart exam?')) location.reload();
+            if (confirm('Are you sure you want to restart the exam? All progress will be lost.')) {
+                location.reload();
+            }
         }
     </script>
 </body>
