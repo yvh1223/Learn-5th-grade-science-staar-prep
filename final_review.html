@@ -1,378 +1,200 @@
-                    correct: 2,
-                    chapter: 1,
-                    explanation: "A balance scale measures mass (how much matter is in an object)!"
-                }
-            ],
-            
-            quick: [
-                {
-                    question: "What is the control center of a cell called?",
-                    options: ["Cell wall", "Nucleus", "Chloroplast", "Vacuole"],
-                    correct: 1,
-                    chapter: 3,
-                    explanation: "The nucleus controls all cell activities - it's like the brain of the cell!"
-                },
-                {
-                    question: "Which planet is closest to the sun?",
-                    options: ["Venus", "Earth", "Mercury", "Mars"],
-                    correct: 2,
-                    chapter: 2,
-                    explanation: "Mercury is the closest planet to the sun in our solar system!"
-                },
-                {
-                    question: "Energy cannot be created or destroyed, only:",
-                    options: ["Wasted", "Transformed", "Stopped", "Slowed down"],
-                    correct: 1,
-                    chapter: 4,
-                    explanation: "The Law of Conservation of Energy states energy can only change forms!"
-                },
-                {
-                    question: "What causes rain in the water cycle?",
-                    options: ["Evaporation", "Condensation", "Precipitation", "Collection"],
-                    correct: 2,
-                    chapter: 5,
-                    explanation: "Precipitation occurs when water droplets in clouds become too heavy and fall!"
-                },
-                {
-                    question: "What tool measures temperature?",
-                    options: ["Barometer", "Thermometer", "Anemometer", "Hygrometer"],
-                    correct: 1,
-                    chapter: 1,
-                    explanation: "A thermometer measures how hot or cold something is!"
-                },
-                {
-                    question: "Plants make their own food through:",
-                    options: ["Respiration", "Photosynthesis", "Digestion", "Absorption"],
-                    correct: 1,
-                    chapter: 3,
-                    explanation: "Photosynthesis allows plants to make food using sunlight, water, and carbon dioxide!"
-                },
-                {
-                    question: "In which state of matter are particles closest together?",
-                    options: ["Gas", "Liquid", "Solid", "Plasma"],
-                    correct: 2,
-                    chapter: 4,
-                    explanation: "Solid particles are packed tightly together and vibrate in place!"
-                },
-                {
-                    question: "Which type of cloud looks like cotton balls?",
-                    options: ["Stratus", "Cirrus", "Cumulus", "Nimbus"],
-                    correct: 2,
-                    chapter: 5,
-                    explanation: "Cumulus clouds are puffy and look like cotton balls in the sky!"
-                },
-                {
-                    question: "Earth's thickest layer is the:",
-                    options: ["Crust", "Mantle", "Outer core", "Inner core"],
-                    correct: 1,
-                    chapter: 2,
-                    explanation: "The mantle is Earth's largest and thickest layer!"
-                },
-                {
-                    question: "A good hypothesis should be:",
-                    options: ["Always correct", "Testable", "Very complicated", "Impossible to prove"],
-                    correct: 1,
-                    chapter: 1,
-                    explanation: "A hypothesis must be testable through experiments or observations!"
-                }
-            ]
-        };
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Review - STAAR Science Test Prep</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 20px; text-align: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+        .header h1 { font-size: 2.5em; color: #4a90e2; margin-bottom: 10px; }
+        .section { background: rgba(255, 255, 255, 0.95); padding: 25px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+        .section h2 { color: #4a90e2; margin-bottom: 15px; font-size: 1.5em; }
+        .chapter-summary { background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0; border-left: 5px solid #4a90e2; }
+        .key-concepts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
+        .concept-card { background: #e3f2fd; padding: 15px; border-radius: 10px; border-left: 4px solid #2196F3; }
+        .test-tips { background: #fff3e0; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #ff9800; }
+        .btn { padding: 12px 25px; margin: 10px; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease; }
+        .btn-primary { background: #4a90e2; color: white; }
+        .btn-success { background: #4CAF50; color: white; }
+        .btn-warning { background: #ff9800; color: white; }
+        .navigation { text-align: center; margin: 30px 0; }
+        .back-link { position: fixed; top: 20px; left: 20px; background: rgba(255, 255, 255, 0.9); color: #4a90e2; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 10px; margin: 5px 0; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #4CAF50; }
+        .checklist li:before { content: "✓ "; color: #4CAF50; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Final Review</h1>
+            <h2>Get Ready for STAAR Success!</h2>
+            <p>Complete review of all 5 chapters plus test-taking strategies</p>
+        </div>
 
-        let currentQuizMode = 'mixed';
-        let currentQuestions = [];
-        
-        // Final Review Quiz Class
-        class FinalReviewQuiz extends ScienceQuiz {
-            constructor() {
-                super();
-                this.currentQuizMode = 'mixed';
-                this.chapterScores = {};
-                this.initializeQuiz();
-            }
+        <div class="section">
+            <h2>📚 Chapter Quick Review</h2>
             
-            initializeQuiz() {
-                this.setQuizMode('mixed');
-                this.updateProgressSummary();
-            }
+            <div class="chapter-summary">
+                <h3>🔬 Chapter 1: Scientific Method & Tools</h3>
+                <ul>
+                    <li><strong>Scientific Method Steps:</strong> Ask question → Research → Hypothesis → Experiment → Analyze → Conclude</li>
+                    <li><strong>Key Tools:</strong> Microscope, balance, thermometer, graduated cylinder, ruler</li>
+                    <li><strong>Observations:</strong> Qualitative (descriptive) vs Quantitative (numbers/measurements)</li>
+                </ul>
+            </div>
+
+            <div class="chapter-summary">
+                <h3>🌍 Chapter 2: Earth & Space Science</h3>
+                <ul>
+                    <li><strong>Day/Night:</strong> Earth's rotation (24 hours)</li>
+                    <li><strong>Seasons:</strong> Earth's tilted axis as it orbits the Sun</li>
+                    <li><strong>Moon Phases:</strong> Different amounts of sunlight reflected</li>
+                    <li><strong>Rocks:</strong> Igneous (cooled magma), Sedimentary (layers), Metamorphic (heat/pressure)</li>
+                </ul>
+            </div>
+
+            <div class="chapter-summary">
+                <h3>🌱 Chapter 3: Living Systems</h3>
+                <ul>
+                    <li><strong>Photosynthesis:</strong> Plants make food using sunlight, water, CO₂</li>
+                    <li><strong>Food Chains:</strong> Producer → Primary Consumer → Secondary Consumer</li>
+                    <li><strong>Cells:</strong> Basic unit of all living things</li>
+                    <li><strong>Ecosystems:</strong> Living and non-living things working together</li>
+                </ul>
+            </div>
+
+            <div class="chapter-summary">
+                <h3>⚡ Chapter 4: Matter & Energy</h3>
+                <ul>
+                    <li><strong>States of Matter:</strong> Solid, Liquid, Gas</li>
+                    <li><strong>Physical Changes:</strong> Melting, freezing, evaporation (no new substance)</li>
+                    <li><strong>Energy Types:</strong> Kinetic (motion), Potential (stored), Heat, Light</li>
+                    <li><strong>Conductors vs Insulators:</strong> Copper conducts, plastic insulates</li>
+                </ul>
+            </div>
+
+            <div class="chapter-summary">
+                <h3>🌊 Chapter 5: Water Cycle & Weather</h3>
+                <ul>
+                    <li><strong>Water Cycle:</strong> Evaporation → Condensation → Precipitation → Collection</li>
+                    <li><strong>Weather Tools:</strong> Barometer (pressure), Anemometer (wind), Thermometer (temperature)</li>
+                    <li><strong>Clouds:</strong> Cumulonimbus brings storms, Cirrus are high and wispy</li>
+                    <li><strong>Energy Source:</strong> The Sun drives weather and water cycle</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 STAAR Test Strategies</h2>
             
-            getQuizData() {
-                return {
-                    questions: currentQuestions
-                };
-            }
+            <div class="test-tips">
+                <h3>📖 Before the Test</h3>
+                <ul class="checklist">
+                    <li>Get a good night's sleep (8+ hours)</li>
+                    <li>Eat a healthy breakfast</li>
+                    <li>Review key concepts, don't cram new material</li>
+                    <li>Gather required materials (pencils, calculator if allowed)</li>
+                </ul>
+            </div>
+
+            <div class="test-tips">
+                <h3>⏱️ During the Test</h3>
+                <ul class="checklist">
+                    <li>Read each question carefully and completely</li>
+                    <li>Eliminate obviously wrong answers first</li>
+                    <li>Look for key words: "always," "never," "most likely," "best"</li>
+                    <li>Skip difficult questions and come back later</li>
+                    <li>Check your work if time permits</li>
+                </ul>
+            </div>
+
+            <div class="test-tips">
+                <h3>🔍 Answer Strategy</h3>
+                <ul class="checklist">
+                    <li>Trust your first instinct if you studied well</li>
+                    <li>Use process of elimination for multiple choice</li>
+                    <li>Look for clues in the question stem</li>
+                    <li>Don't leave any questions blank</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🧠 Key Science Concepts to Remember</h2>
             
-            getChapterNumber() {
-                return 'final';
-            }
-            
-            setQuizMode(mode) {
-                this.currentQuizMode = mode;
-                currentQuestions = [...comprehensiveQuestions[mode]];
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <h4>🔬 Scientific Method</h4>
+                    <p>Always starts with a question. A hypothesis is an educated guess that can be tested.</p>
+                </div>
                 
-                // Shuffle questions
-                for (let i = currentQuestions.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [currentQuestions[i], currentQuestions[j]] = [currentQuestions[j], currentQuestions[i]];
-                }
+                <div class="concept-card">
+                    <h4>🌍 Earth's Movements</h4>
+                    <p>Rotation = day/night (24 hrs). Revolution = seasons (365 days).</p>
+                </div>
                 
-                this.currentQuestion = 0;
-                this.userAnswers = [];
-                this.updateModeDescription(mode);
-                this.generateQuizHTML();
-                this.showQuestion(0);
-                this.updateQuestionCounter();
-            }
-            
-            updateModeDescription(mode) {
-                const descriptions = {
-                    mixed: 'Mixed Review Mode: Questions from all chapters to test your complete understanding!',
-                    staar: 'STAAR Practice Mode: Questions formatted like the Texas state science test!',
-                    quick: 'Quick Review Mode: Essential questions to check your basic knowledge!'
-                };
+                <div class="concept-card">
+                    <h4>🌱 Living Things</h4>
+                    <p>All made of cells. Plants are producers, animals are consumers.</p>
+                </div>
                 
-                document.getElementById('quiz-mode-description').innerHTML = 
-                    `<strong>${descriptions[mode]}</strong>`;
-            }
-            
-            generateQuizHTML() {
-                const container = document.getElementById('quiz-container');
-                container.innerHTML = '';
+                <div class="concept-card">
+                    <h4>⚡ Matter & Energy</h4>
+                    <p>Matter has 3 states. Energy can change forms but is never destroyed.</p>
+                </div>
                 
-                currentQuestions.forEach((q, index) => {
-                    const questionDiv = document.createElement('div');
-                    questionDiv.className = 'question';
-                    questionDiv.dataset.question = index;
-                    if (index === 0) questionDiv.classList.add('active');
-                    
-                    questionDiv.innerHTML = `
-                        <h3>Question ${index + 1} of ${currentQuestions.length}</h3>
-                        <p>${q.question}</p>
-                        <div class="options">
-                            ${q.options.map((option, i) => 
-                                `<button class="option" data-answer="${i}">${option}</button>`
-                            ).join('')}
-                        </div>
-                        <div class="feedback"></div>
-                    `;
-                    
-                    container.appendChild(questionDiv);
-                });
-            }
-            
-            updateQuestionCounter() {
-                const counter = document.getElementById('question-counter');
-                if (counter) {
-                    counter.textContent = `Question ${this.currentQuestion + 1} of ${currentQuestions.length}`;
-                }
-            }
-            
-            showQuestion(index) {
-                super.showQuestion(index);
-                this.updateQuestionCounter();
-            }
-            
-            nextQuestion() {
-                super.nextQuestion();
-                this.updateQuestionCounter();
-            }
-            
-            previousQuestion() {
-                super.previousQuestion();
-                this.updateQuestionCounter();
-            }
-            
-            calculateChapterBreakdown() {
-                const breakdown = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
-                const totals = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
-                
-                currentQuestions.forEach((q, index) => {
-                    totals[q.chapter]++;
-                    if (this.userAnswers[index] === q.correct) {
-                        breakdown[q.chapter]++;
-                    }
-                });
-                
-                return { breakdown, totals };
-            }
-            
-            showResults(score) {
-                const resultsDiv = document.getElementById('quiz-results');
-                const scoreDisplay = document.getElementById('score-display');
-                const detailedBreakdown = document.getElementById('detailed-breakdown');
-                const answersReview = document.getElementById('answers-review');
+                <div class="concept-card">
+                    <h4>🌊 Water Cycle</h4>
+                    <p>Sun provides energy. Water constantly moves: evaporation → condensation → precipitation.</p>
+                </div>
+            </div>
+        </div>
 
-                if (resultsDiv && scoreDisplay) {
-                    resultsDiv.style.display = 'block';
-                    resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        <div class="section">
+            <h2>📊 Performance Targets</h2>
+            <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3>🎯 STAAR Score Goals:</h3>
+                <ul>
+                    <li><strong>Masters Grade Level:</strong> 85%+ (28+ out of 32 questions)</li>
+                    <li><strong>Meets Grade Level:</strong> 70%+ (22+ out of 32 questions)</li>
+                    <li><strong>Approaches Grade Level:</strong> 50%+ (16+ out of 32 questions)</li>
+                </ul>
+                <p><strong>💡 Tip:</strong> Aim for "Meets" or higher to show you're ready for 6th grade science!</p>
+            </div>
+        </div>
 
-                    let scoreClass = '';
-                    let message = '';
-                    let emoji = '';
+        <div class="section">
+            <h2>📅 Final Prep Checklist</h2>
+            <div class="test-tips">
+                <h3>✅ Complete These Steps Before Test Day:</h3>
+                <ul class="checklist">
+                    <li>Take all 5 chapter practice tests</li>
+                    <li>Complete the comprehensive practice exam</li>
+                    <li>Review any missed questions and explanations</li>
+                    <li>Practice with STAAR-format questions</li>
+                    <li>Get familiar with answer sheet bubbling</li>
+                    <li>Review test day procedures with your teacher</li>
+                </ul>
+            </div>
+        </div>
 
-                    if (score >= 90) {
-                        scoreClass = 'score-excellent';
-                        message = "OUTSTANDING! You're absolutely ready for your tests! 🌟";
-                        emoji = '🏆';
-                        this.showCertificate();
-                    } else if (score >= 80) {
-                        scoreClass = 'score-excellent';
-                        message = "EXCELLENT! You've mastered 5th grade science! 🎯";
-                        emoji = '🎉';
-                        this.showCertificate();
-                    } else if (score >= 70) {
-                        scoreClass = 'score-good';
-                        message = "GREAT JOB! You're doing well - review the topics you missed! 👍";
-                        emoji = '🎯';
-                    } else {
-                        scoreClass = 'score-needs-practice';
-                        message = "Keep practicing! Focus on the chapters where you missed questions! 💪";
-                        emoji = '📚';
-                    }
+        <div class="navigation">
+            <h2>🚀 Ready to Practice?</h2>
+            <a href="comprehensive_practice_exam.html" class="btn btn-success">🧪 Take Final Practice Exam</a>
+            <a href="test_strategies.html" class="btn btn-warning">🎯 Review Test Strategies</a>
+            <a href="index.html" class="btn btn-primary">🏠 Back to Home</a>
+        </div>
 
-                    scoreDisplay.className = scoreClass;
-                    scoreDisplay.innerHTML = `
-                        <div style="font-size: 3em; margin-bottom: 15px;">${emoji}</div>
-                        <div>Your Final Score: ${score}%</div>
-                        <div style="font-size: 1em; margin-top: 10px;">${message}</div>
-                    `;
-
-                    // Chapter breakdown
-                    if (detailedBreakdown) {
-                        const { breakdown, totals } = this.calculateChapterBreakdown();
-                        let breakdownHTML = '<h4>📊 Performance by Chapter:</h4><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">';
-                        
-                        const chapterNames = {
-                            1: '🔬 Scientific Method',
-                            2: '🌍 Earth & Space',
-                            3: '🌱 Living Systems',
-                            4: '⚡ Matter & Energy',
-                            5: '🌊 Water Cycle'
-                        };
-                        
-                        for (let chapter = 1; chapter <= 5; chapter++) {
-                            if (totals[chapter] > 0) {
-                                const chapterScore = Math.round((breakdown[chapter] / totals[chapter]) * 100);
-                                const chapterClass = chapterScore >= 80 ? '#4CAF50' : chapterScore >= 60 ? '#FF9800' : '#f44336';
-                                
-                                breakdownHTML += `
-                                    <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid ${chapterClass};">
-                                        <strong>${chapterNames[chapter]}</strong><br>
-                                        ${breakdown[chapter]}/${totals[chapter]} correct (${chapterScore}%)
-                                    </div>
-                                `;
-                            }
-                        }
-                        
-                        breakdownHTML += '</div>';
-                        detailedBreakdown.innerHTML = breakdownHTML;
-                    }
-
-                    // Detailed review (shortened for final quiz)
-                    if (answersReview) {
-                        let reviewHTML = '<h4>📋 Quick Answer Review:</h4><div style="text-align: left; margin-top: 15px;">';
-                        
-                        currentQuestions.forEach((q, index) => {
-                            const userAnswer = this.userAnswers[index];
-                            const isCorrect = userAnswer === q.correct;
-                            
-                            if (!isCorrect) { // Only show incorrect answers
-                                const icon = '❌';
-                                reviewHTML += `
-                                    <div style="margin-bottom: 15px; padding: 10px; background: #fee; border-radius: 8px;">
-                                        <strong>${icon} Question ${index + 1}:</strong> ${q.question}<br>
-                                        <strong>Your answer:</strong> ${q.options[userAnswer] || 'Not answered'}<br>
-                                        <strong>Correct answer:</strong> ${q.options[q.correct]}<br>
-                                        <em>${q.explanation}</em>
-                                    </div>
-                                `;
-                            }
-                        });
-                        
-                        if (score >= 90) {
-                            reviewHTML += '<div style="text-align: center; padding: 20px; background: #e8f5e8; border-radius: 8px;"><strong>🎉 Perfect or near-perfect score! You got most questions right!</strong></div>';
-                        }
-                        
-                        reviewHTML += '</div>';
-                        answersReview.innerHTML = reviewHTML;
-                    }
-                }
-            }
-            
-            showCertificate() {
-                const certificateSection = document.getElementById('certificate-section');
-                if (certificateSection) {
-                    certificateSection.style.display = 'block';
-                    setTimeout(() => {
-                        certificateSection.scrollIntoView({ behavior: 'smooth' });
-                    }, 1000);
-                }
-            }
-            
-            updateProgressSummary() {
-                const completed = JSON.parse(localStorage.getItem('completedChapters') || '[]');
-                const scores = JSON.parse(localStorage.getItem('quizScores') || '{}');
-                const progressDiv = document.getElementById('overall-progress');
-                
-                if (progressDiv) {
-                    const totalChapters = 5;
-                    const completedCount = completed.length;
-                    const progressPercent = (completedCount / totalChapters) * 100;
-                    
-                    let progressHTML = `
-                        <div style="text-align: center; margin: 20px 0;">
-                            <div style="background: #e0e0e0; border-radius: 10px; height: 30px; position: relative; margin: 15px 0;">
-                                <div style="background: linear-gradient(90deg, #4CAF50, #45a049); height: 100%; border-radius: 10px; width: ${progressPercent}%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                                    ${Math.round(progressPercent)}% Complete
-                                </div>
-                            </div>
-                            <p><strong>Completed: ${completedCount} out of ${totalChapters} chapters</strong></p>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 20px 0;">
-                    `;
-                    
-                    for (let i = 1; i <= 5; i++) {
-                        const isCompleted = completed.includes(i);
-                        const score = scores[`chapter${i}`] || 0;
-                        const status = isCompleted ? `✅ ${score}%` : '⏳ Pending';
-                        const bgColor = isCompleted ? (score >= 80 ? '#e8f5e8' : '#fff3e0') : '#f5f5f5';
-                        
-                        progressHTML += `
-                            <div style="background: ${bgColor}; padding: 10px; border-radius: 8px; text-align: center;">
-                                <strong>Chapter ${i}</strong><br>
-                                <small>${status}</small>
-                            </div>
-                        `;
-                    }
-                    
-                    progressHTML += '</div>';
-                    progressDiv.innerHTML = progressHTML;
-                }
-            }
-        }
-
-        // Global functions for mode selection
-        function setQuizMode(mode) {
-            // Update button styles
-            document.querySelectorAll('.mode-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Update quiz
-            if (window.finalQuiz) {
-                window.finalQuiz.setQuizMode(mode);
-            }
-        }
-
-        // Initialize final quiz when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            if (document.getElementById('quiz-container')) {
-                window.finalQuiz = new FinalReviewQuiz();
-            }
-            addPageAnimations();
-        });
-    </script>
-    <script src="quiz.js"></script>
+        <div style="background: linear-gradient(45deg, #4CAF50, #45a049); color: white; padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0;">
+            <h2>🌟 You've Got This!</h2>
+            <p style="font-size: 1.2em; margin: 10px 0;">Remember: You've studied hard and you're prepared. Trust yourself and do your best!</p>
+            <p><strong>Good luck on your STAAR Science test! 🎉</strong></p>
+        </div>
+    </div>
 </body>
 </html>
