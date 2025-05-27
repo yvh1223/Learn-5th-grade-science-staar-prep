@@ -8,7 +8,7 @@
 
 ### 🌟 **Complete Interactive Science Curriculum for STAAR Success!** 🌟
 
-**🔗 [🚀 START LEARNING NOW!](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/)**
+**🔗 [🚀 START LearnING NOW!](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)**
 
 *Designed specifically for Texas 5th grade students preparing for the STAAR Science assessment*
 
@@ -29,7 +29,7 @@
 - 🌟 **Mobile-Responsive Design** - Study anywhere, anytime
 - 🎨 **Professional Interface** - Engaging and easy to navigate
 - ⚡ **Fast Loading** - Optimized for all devices
-- 🔄 **Progress Tracking** - Monitor learning advancement
+- 🔄 **Progress Tracking** - Monitor Learning advancement
 
 ---
 
@@ -67,7 +67,7 @@
 
 ## 🚀 **Getting Started**
 
-### **🔗 [Click Here to Start Learning!](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/)**
+### **🔗 [Click Here to Start Learning!](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)**
 
 ### 📋 **Recommended Study Plan**
 1. **📚 Study Chapter 1** - Scientific Method & Tools (Day 1-3)
@@ -97,7 +97,7 @@
 - **Responsive Layout** works on all devices
 - **Professional Styling** with engaging visuals
 - **Easy Navigation** between chapters
-- **Accessible Design** for all learners
+- **Accessible Design** for all Learners
 
 ---
 
@@ -128,7 +128,7 @@
 - ✅ Fast loading times (< 2 seconds)
 - ✅ Mobile-responsive design
 - ✅ Intuitive navigation
-- ✅ Accessible for all learners
+- ✅ Accessible for all Learners
 
 ---
 
@@ -146,17 +146,17 @@
 
 <div align="center">
 
-[![Start Learning](https://img.shields.io/badge/🚀_Start-Learning_Now!-success?style=for-the-badge&logo=rocket)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/)
+[![Start Learning](https://img.shields.io/badge/🚀_Start-Learning_Now!-success?style=for-the-badge&logo=rocket)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)
 
-[![Chapter 1](https://img.shields.io/badge/🔬_Chapter_1-Scientific_Method-blue?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/chapter1.html)
-[![Chapter 2](https://img.shields.io/badge/🌍_Chapter_2-Earth_&_Space-green?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/chapter2.html)
-[![Chapter 3](https://img.shields.io/badge/🌱_Chapter_3-Living_Systems-orange?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/chapter3.html)
-[![Chapter 4](https://img.shields.io/badge/⚡_Chapter_4-Matter_&_Energy-red?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/chapter4.html)
-[![Chapter 5](https://img.shields.io/badge/🌊_Chapter_5-Water_Cycle-cyan?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/chapter5.html)
+[![Chapter 1](https://img.shields.io/badge/🔬_Chapter_1-Scientific_Method-blue?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/chapter1.html)
+[![Chapter 2](https://img.shields.io/badge/🌍_Chapter_2-Earth_&_Space-green?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/chapter2.html)
+[![Chapter 3](https://img.shields.io/badge/🌱_Chapter_3-Living_Systems-orange?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/chapter3.html)
+[![Chapter 4](https://img.shields.io/badge/⚡_Chapter_4-Matter_&_Energy-red?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/chapter4.html)
+[![Chapter 5](https://img.shields.io/badge/🌊_Chapter_5-Water_Cycle-cyan?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/chapter5.html)
 
-[![Practice Exam](https://img.shields.io/badge/📝_Comprehensive-Practice_Exam-purple?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/comprehensive_practice_exam.html)
-[![Test Strategies](https://img.shields.io/badge/🎯_Test-Strategies-yellow?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/test_strategies.html)
-[![Final Review](https://img.shields.io/badge/🎓_Final-Review-lightblue?style=flat-square)](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/final_review.html)
+[![Practice Exam](https://img.shields.io/badge/📝_Comprehensive-Practice_Exam-purple?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/comprehensive_practice_exam.html)
+[![Test Strategies](https://img.shields.io/badge/🎯_Test-Strategies-yellow?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/test_strategies.html)
+[![Final Review](https://img.shields.io/badge/🎓_Final-Review-lightblue?style=flat-square)](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/final_review.html)
 
 </div>
 
@@ -164,7 +164,7 @@
 
 ## 🏆 **About This Project**
 
-Created with ❤️ to help 5th grade students excel in science and achieve STAAR success. This comprehensive curriculum combines proven educational strategies with modern web technology to create an engaging, effective learning experience.
+Created with ❤️ to help 5th grade students excel in science and achieve STAAR success. This comprehensive curriculum combines proven educational strategies with modern web technology to create an engaging, effective Learning experience.
 
 ### **🎯 Mission:** 
 To provide every 5th grade student with the tools and confidence they need to master science concepts and excel on the STAAR assessment.
@@ -175,13 +175,13 @@ To provide every 5th grade student with the tools and confidence they need to ma
 
 ## 🌟 **Ready to Begin Your Science Adventure?** 🌟
 
-### **🔗 [START LEARNING TODAY!](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/)**
+### **🔗 [START LearnING TODAY!](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)**
 
 *Your journey to STAAR Science success starts here!* 🚀
 
 ---
 
-**📧 Questions?** Check out the [Test Strategies](https://yvh1223.github.io/learn-5th-grade-science-staar-prep/test_strategies.html) page for helpful tips!
+**📧 Questions?** Check out the [Test Strategies](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/test_strategies.html) page for helpful tips!
 
 **⭐ Found this helpful?** Star this repository to support the project!
 
@@ -189,4 +189,4 @@ To provide every 5th grade student with the tools and confidence they need to ma
 
 ---
 
-*© 2025 - learn's 5th Grade Science STAAR Test Prep - Built for Educational Excellence*
+*© 2025 - Learn's 5th Grade Science STAAR Test Prep - Built for Educational Excellence*
