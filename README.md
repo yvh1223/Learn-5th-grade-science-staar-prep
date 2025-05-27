@@ -8,7 +8,7 @@
 
 ### 🌟 **Complete Interactive Science Curriculum for STAAR Success!** 🌟
 
-**🔗 [🚀 START LearnING NOW!](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)**
+**🔗 [🚀 START LEARNING NOW!](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)**
 
 *Designed specifically for Texas 5th grade students preparing for the STAAR Science assessment*
 
@@ -29,7 +29,7 @@
 - 🌟 **Mobile-Responsive Design** - Study anywhere, anytime
 - 🎨 **Professional Interface** - Engaging and easy to navigate
 - ⚡ **Fast Loading** - Optimized for all devices
-- 🔄 **Progress Tracking** - Monitor Learning advancement
+- 🔄 **Progress Tracking** - Monitor learning advancement
 
 ---
 
@@ -97,7 +97,7 @@
 - **Responsive Layout** works on all devices
 - **Professional Styling** with engaging visuals
 - **Easy Navigation** between chapters
-- **Accessible Design** for all Learners
+- **Accessible Design** for all learners
 
 ---
 
@@ -128,7 +128,7 @@
 - ✅ Fast loading times (< 2 seconds)
 - ✅ Mobile-responsive design
 - ✅ Intuitive navigation
-- ✅ Accessible for all Learners
+- ✅ Accessible for all learners
 
 ---
 
@@ -164,7 +164,7 @@
 
 ## 🏆 **About This Project**
 
-Created with ❤️ to help 5th grade students excel in science and achieve STAAR success. This comprehensive curriculum combines proven educational strategies with modern web technology to create an engaging, effective Learning experience.
+Created with ❤️ to help 5th grade students excel in science and achieve STAAR success. This comprehensive curriculum combines proven educational strategies with modern web technology to create an engaging, effective learning experience.
 
 ### **🎯 Mission:** 
 To provide every 5th grade student with the tools and confidence they need to master science concepts and excel on the STAAR assessment.
@@ -175,7 +175,7 @@ To provide every 5th grade student with the tools and confidence they need to ma
 
 ## 🌟 **Ready to Begin Your Science Adventure?** 🌟
 
-### **🔗 [START LearnING TODAY!](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)**
+### **🔗 [START LEARNING TODAY!](https://yvh1223.github.io/Learn-5th-grade-science-staar-prep/)**
 
 *Your journey to STAAR Science success starts here!* 🚀
 
@@ -189,4 +189,4 @@ To provide every 5th grade student with the tools and confidence they need to ma
 
 ---
 
-*© 2025 - Learn's 5th Grade Science STAAR Test Prep - Built for Educational Excellence*
+*© 2025 - Learn 5th Grade Science STAAR Test Prep - Built for Educational Excellence*
