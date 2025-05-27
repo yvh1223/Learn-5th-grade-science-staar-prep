@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vihaan's 5th Grade Science Adventure!</title>
+    <title>Learn 5th Grade Science STAAR Test Prep</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
         
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: #333;
@@ -34,37 +34,9 @@
         }
         
         .header h1 {
-            color: #4a47a3;
+            color: #4a90e2;
             font-size: 3em;
             margin-bottom: 10px;
-        }
-        
-        .progress-section {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .progress-bar {
-            background: #e0e0e0;
-            border-radius: 10px;
-            height: 25px;
-            margin: 15px 0;
-            position: relative;
-        }
-        
-        .progress {
-            background: linear-gradient(90deg, #4CAF50, #45a049);
-            height: 100%;
-            border-radius: 10px;
-            width: 0%;
-            transition: width 0.5s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
         }
         
         .chapter-grid {
@@ -89,7 +61,7 @@
         .chapter-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border-color: #4a47a3;
+            border-color: #4a90e2;
         }
         
         .chapter-icon {
@@ -98,7 +70,7 @@
         }
         
         .chapter-number {
-            background: #4a47a3;
+            background: #4a90e2;
             color: white;
             border-radius: 50%;
             width: 50px;
@@ -109,16 +81,6 @@
             font-weight: bold;
             margin-bottom: 15px;
             font-size: 1.2em;
-        }
-        
-        .completed-badge {
-            background: #4CAF50;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-top: 10px;
-            display: inline-block;
         }
         
         .test-prep {
@@ -137,7 +99,7 @@
         }
         
         .btn {
-            background: #4a47a3;
+            background: #4a90e2;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -151,7 +113,7 @@
         }
         
         .btn:hover {
-            background: #363399;
+            background: #357abd;
         }
         
         .achievement {
@@ -167,23 +129,13 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 Vihaan's Science Adventure! 🧪</h1>
+            <h1>🚀 Learn 5th Grade Science! 🧪</h1>
             <p style="font-size: 1.3em; color: #666; margin: 15px 0;">
-                Complete 5th Grade Science • STAAR & MAP Test Ready • Summer Learning Fun!
+                Complete 5th Grade Science • STAAR & MAP Test Ready • Interactive Learning!
             </p>
             <div class="achievement">🏆 Future Scientist</div>
             <div class="achievement">📚 Learning Champion</div>
             <div class="achievement">🧠 Problem Solver</div>
-        </div>
-
-        <div class="progress-section">
-            <h2 style="text-align: center; margin-bottom: 15px;">📊 Your Learning Progress</h2>
-            <div class="progress-bar">
-                <div class="progress" id="progressBar">0% Complete</div>
-            </div>
-            <p style="text-align: center; color: #666;">
-                Complete all chapters and quizzes to master 5th grade science!
-            </p>
         </div>
 
         <div class="test-prep">
@@ -312,26 +264,12 @@
         </div>
 
         <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; margin: 30px 0; text-align: center; color: white;">
-            <h3>🌟 Remember, Vihaan:</h3>
+            <h3>🌟 Remember:</h3>
             <p style="font-size: 1.1em; margin: 10px 0;">
                 "Science is not just about memorizing facts - it's about understanding how our amazing world works!<br>
                 You're going to be a fantastic scientist! 🔬✨"
             </p>
         </div>
     </div>
-
-    <script>
-        // Update progress based on completed chapters
-        function updateProgress() {
-            const completed = JSON.parse(localStorage.getItem('completedChapters') || '[]');
-            const progress = (completed.length / 5) * 100;
-            const progressBar = document.getElementById('progressBar');
-            progressBar.style.width = progress + '%';
-            progressBar.textContent = Math.round(progress) + '% Complete';
-        }
-        
-        // Initialize progress on page load
-        updateProgress();
-    </script>
 </body>
 </html>
