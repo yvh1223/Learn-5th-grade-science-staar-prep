@@ -4,26 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 2: Earth & Space Science</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; background: white; border-radius: 20px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .header h1 { color: #4a47a3; font-size: 2.5em; margin-bottom: 10px; }
-        .breadcrumb { margin-top: 15px; }
-        .breadcrumb a { color: #4a47a3; text-decoration: none; }
-        .lesson-content { background: white; border-radius: 15px; padding: 30px; margin: 20px 0; }
-        .solar-system-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
-        .planet-card { background: #f8f9fa; border-radius: 15px; padding: 20px; text-align: center; transition: transform 0.3s ease; border: 3px solid transparent; }
-        .planet-card:hover { transform: translateY(-5px); border-color: #4a47a3; }
-        .planet-icon { font-size: 3em; margin-bottom: 15px; }
-        .earth-layers { background: linear-gradient(135deg, #ff9a9e, #fecfef); border-radius: 15px; padding: 25px; margin: 30px 0; }
-        .moon-phases { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin: 30px 0; }
-        .quiz-section { background: white; border-radius: 15px; padding: 30px; margin: 30px 0; }
-        .btn { background: #4a47a3; color: white; border: none; padding: 15px 30px; border-radius: 25px; cursor: pointer; font-size: 16px; transition: background 0.3s ease; margin: 10px; text-decoration: none; display: inline-block; }
-        .btn:hover { background: #363399; }
-        .navigation { text-align: center; margin: 30px 0; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -40,7 +21,7 @@
                 <p>Welcome to the incredible journey through our planet Earth and the vast solar system! From the layers beneath our feet to the planets spinning in space, let's discover the wonders of our cosmic neighborhood!</p>
             </div>
 
-            <div class="earth-layers">
+            <div style="background: linear-gradient(135deg, #ff9a9e, #fecfef); border-radius: 15px; padding: 25px; margin: 30px 0;">
                 <h3>🌍 Earth's Layers - Journey to the Center!</h3>
                 <p>Our Earth is like a giant layered cake! Let's dig deep and explore what's inside our planet:</p>
                 
@@ -83,9 +64,9 @@
                 <h3>🌌 Our Solar System - The Planetary Family!</h3>
                 <p>Our solar system has 8 amazing planets, each with its own personality! Let's meet them in order from the Sun:</p>
                 
-                <div class="solar-system-grid">
-                    <div class="planet-card">
-                        <div class="planet-icon">☿️</div>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">☿️</div>
                         <h4>Mercury</h4>
                         <p><strong>Position:</strong> 1st from Sun</p>
                         <p><strong>Size:</strong> Smallest planet</p>
@@ -93,8 +74,8 @@
                         <p><strong>Fun fact:</strong> A year is only 88 Earth days!</p>
                     </div>
                     
-                    <div class="planet-card">
-                        <div class="planet-icon">♀️</div>
+                    <div class="tool-card">
+                        <div class="tool-icon">♀️</div>
                         <h4>Venus</h4>
                         <p><strong>Position:</strong> 2nd from Sun</p>
                         <p><strong>Size:</strong> Almost same size as Earth</p>
@@ -102,8 +83,8 @@
                         <p><strong>Fun fact:</strong> Hottest planet due to thick atmosphere</p>
                     </div>
                     
-                    <div class="planet-card">
-                        <div class="planet-icon">🌍</div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🌍</div>
                         <h4>Earth</h4>
                         <p><strong>Position:</strong> 3rd from Sun</p>
                         <p><strong>Size:</strong> Perfect size for life</p>
@@ -111,8 +92,8 @@
                         <p><strong>Fun fact:</strong> 71% covered by water</p>
                     </div>
                     
-                    <div class="planet-card">
-                        <div class="planet-icon">♂️</div>
+                    <div class="tool-card">
+                        <div class="tool-icon">♂️</div>
                         <h4>Mars</h4>
                         <p><strong>Position:</strong> 4th from Sun</p>
                         <p><strong>Size:</strong> About half Earth's size</p>
@@ -120,8 +101,8 @@
                         <p><strong>Fun fact:</strong> Has the largest volcano in the solar system</p>
                     </div>
                     
-                    <div class="planet-card">
-                        <div class="planet-icon">🪐</div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🪐</div>
                         <h4>Jupiter</h4>
                         <p><strong>Position:</strong> 5th from Sun</p>
                         <p><strong>Size:</strong> Largest planet</p>
@@ -129,8 +110,8 @@
                         <p><strong>Fun fact:</strong> Has over 80 moons!</p>
                     </div>
                     
-                    <div class="planet-card">
-                        <div class="planet-icon">🪐</div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🪐</div>
                         <h4>Saturn</h4>
                         <p><strong>Position:</strong> 6th from Sun</p>
                         <p><strong>Size:</strong> Second largest planet</p>
@@ -138,8 +119,8 @@
                         <p><strong>Fun fact:</strong> Could float in water!</p>
                     </div>
                     
-                    <div class="planet-card">
-                        <div class="planet-icon">🌀</div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🌀</div>
                         <h4>Uranus</h4>
                         <p><strong>Position:</strong> 7th from Sun</p>
                         <p><strong>Size:</strong> Ice giant</p>
@@ -147,8 +128,8 @@
                         <p><strong>Fun fact:</strong> Made of water, methane, and ammonia</p>
                     </div>
                     
-                    <div class="planet-card">
-                        <div class="planet-icon">🔵</div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🔵</div>
                         <h4>Neptune</h4>
                         <p><strong>Position:</strong> 8th from Sun</p>
                         <p><strong>Size:</strong> Farthest planet</p>
@@ -158,7 +139,7 @@
                 </div>
             </div>
 
-            <div class="moon-phases">
+            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 25px; margin: 30px 0;">
                 <h3>🌙 Moon Phases - Our Changing Moon!</h3>
                 <p>The Moon doesn't make its own light - it reflects sunlight! As the Moon orbits Earth, we see different amounts of its lit-up side.</p>
                 
@@ -213,7 +194,7 @@
                 </div>
             </div>
 
-            <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 15px; padding: 25px; margin: 30px 0;">
+            <div class="fun-fact">
                 <h4>🤯 Amazing Space Facts!</h4>
                 <ul>
                     <li>🌍 Earth rotates at 1,000 mph at the equator!</li>
@@ -234,7 +215,7 @@
             <div class="quiz-controls">
                 <button id="prev-btn" class="btn" disabled>⬅️ Previous</button>
                 <button id="next-btn" class="btn">Next ➡️</button>
-                <button id="submit-btn" class="btn" style="background: #4CAF50; display: none;">Submit Quiz 🎯</button>
+                <button id="submit-btn" class="btn btn-primary" style="display: none;">Submit Quiz 🎯</button>
             </div>
             <div id="quiz-results" class="results" style="display: none;">
                 <h3>🎉 Quiz Results</h3>
@@ -264,64 +245,10 @@
         <div class="navigation">
             <a href="chapter1.html" class="btn">⬅️ Previous: Scientific Method</a>
             <a href="index.html" class="btn">🏠 Back to Home</a>
-            <a href="chapter3.html" class="btn" style="background: #4CAF50;">Next: Living Systems 🌱</a>
+            <a href="chapter3.html" class="btn btn-next">Next: Living Systems 🌱</a>
         </div>
     </div>
 
-    <script>
-        // Chapter 2 Quiz Data
-        const chapter2QuizData = {
-            questions: [
-                {
-                    question: "What causes day and night on Earth?",
-                    options: ["Earth's rotation on its axis", "Earth's revolution around the Sun", "The Moon's orbit", "Solar flares"],
-                    correct: 0,
-                    explanation: "Earth rotates (spins) on its axis every 24 hours, causing different parts to face the Sun (day) or away from it (night)."
-                },
-                {
-                    question: "Which layer of Earth is the thickest?",
-                    options: ["Crust", "Mantle", "Outer core", "Inner core"],
-                    correct: 1,
-                    explanation: "The mantle is about 2,900 km thick and makes up most of Earth's volume!"
-                },
-                {
-                    question: "Which planet is known as the 'Red Planet'?",
-                    options: ["Venus", "Mars", "Jupiter", "Mercury"],
-                    correct: 1,
-                    explanation: "Mars appears red because of iron oxide (rust) on its surface!"
-                },
-                {
-                    question: "What do we call it when the Moon appears completely dark?",
-                    options: ["Full Moon", "New Moon", "Half Moon", "Crescent Moon"],
-                    correct: 1,
-                    explanation: "During a New Moon, the Moon is between Earth and Sun, so we can't see its lit side."
-                },
-                {
-                    question: "Which is the largest planet in our solar system?",
-                    options: ["Saturn", "Earth", "Jupiter", "Neptune"],
-                    correct: 2,
-                    explanation: "Jupiter is by far the largest planet - over 1,300 Earths could fit inside it!"
-                }
-            ]
-        };
-        
-        // Custom quiz class for Chapter 2
-        class Chapter2Quiz extends ScienceQuiz {
-            getQuizData() {
-                return chapter2QuizData;
-            }
-            
-            getChapterNumber() {
-                return 2;
-            }
-        }
-        
-        // Initialize Chapter 2 quiz
-        document.addEventListener('DOMContentLoaded', function() {
-            if (document.getElementById('quiz-container')) {
-                new Chapter2Quiz();
-            }
-        });
-    </script>
+    <script src="quiz.js"></script>
 </body>
 </html>
