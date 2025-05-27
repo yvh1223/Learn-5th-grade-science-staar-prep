@@ -6,27 +6,107 @@
     <title>Chapter 5: Water Cycle & Weather</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .water-cycle-diagram { background: linear-gradient(135deg, #87CEEB, #E0F6FF); border-radius: 15px; padding: 30px; margin: 30px 0; text-align: center; }
-        .cycle-components { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
-        .cycle-step { background: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-        .cycle-step:hover { transform: translateY(-5px); }
+        .water-cycle-diagram { 
+            background: linear-gradient(135deg, #87CEEB, #E0F6FF); 
+            border-radius: 15px; 
+            padding: 30px; 
+            margin: 30px 0; 
+            text-align: center; 
+        }
+        .cycle-components { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+            margin: 30px 0; 
+        }
+        .cycle-step { 
+            background: white; 
+            border-radius: 15px; 
+            padding: 20px; 
+            text-align: center; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.3s ease; 
+        }
+        .cycle-step:hover { 
+            transform: translateY(-5px); 
+        }
         .evaporation { border-left: 5px solid #FF6B6B; }
         .condensation { border-left: 5px solid #4ECDC4; }
         .precipitation { border-left: 5px solid #45B7D1; }
         .collection { border-left: 5px solid #96CEB4; }
-        .step-icon { font-size: 3em; margin-bottom: 15px; }
-        .weather-instruments { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
-        .instrument-card { background: white; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-        .instrument-card:hover { transform: translateY(-5px); }
-        .instrument-icon { font-size: 3em; margin-bottom: 15px; }
-        .cloud-types { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px; padding: 30px; margin: 30px 0; }
-        .clouds-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0; }
-        .cloud-card { background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; text-align: center; }
-        .cloud-visual { font-size: 3em; margin-bottom: 15px; }
-        .weather-vs-climate { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
-        .weather-card { background: linear-gradient(135deg, #FFD93D, #FF6B6B); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        .climate-card { background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; border-radius: 15px; padding: 25px; text-align: center; }
-        @media (max-width: 768px) { .weather-vs-climate { grid-template-columns: 1fr; } }
+        .step-icon { 
+            font-size: 3em; 
+            margin-bottom: 15px; 
+        }
+        .weather-instruments { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            margin: 30px 0; 
+        }
+        .instrument-card { 
+            background: white; 
+            border-radius: 15px; 
+            padding: 25px; 
+            text-align: center; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.3s ease; 
+        }
+        .instrument-card:hover { 
+            transform: translateY(-5px); 
+        }
+        .instrument-icon { 
+            font-size: 3em; 
+            margin-bottom: 15px; 
+        }
+        .cloud-types { 
+            background: linear-gradient(135deg, #667eea, #764ba2); 
+            color: white; 
+            border-radius: 15px; 
+            padding: 30px; 
+            margin: 30px 0; 
+        }
+        .clouds-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            margin: 25px 0; 
+        }
+        .cloud-card { 
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .cloud-visual { 
+            font-size: 3em; 
+            margin-bottom: 15px; 
+        }
+        .weather-vs-climate { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px; 
+            margin: 30px 0; 
+        }
+        .weather-card { 
+            background: linear-gradient(135deg, #FFD93D, #FF6B6B); 
+            color: white; 
+            border-radius: 15px; 
+            padding: 25px; 
+            text-align: center; 
+        }
+        .climate-card { 
+            background: linear-gradient(135deg, #74b9ff, #0984e3); 
+            color: white; 
+            border-radius: 15px; 
+            padding: 25px; 
+            text-align: center; 
+        }
+        @media (max-width: 768px) { 
+            .weather-vs-climate { 
+                grid-template-columns: 1fr; 
+            } 
+        }
     </style>
 </head>
 <body>
@@ -240,16 +320,16 @@
         </div>
 
         <!-- Enhanced Study Materials Section -->
-        <div class="enhanced-study-section" style="background: linear-gradient(135deg, #e1f5fe, #b3e5fc); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center; border: 3px solid #0288d1;">
+        <div style="background: linear-gradient(135deg, #e1f5fe, #b3e5fc); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center; border: 3px solid #0288d1;">
             <h2 style="color: #01579b; margin-bottom: 20px;">🎯 Enhanced STAAR Test Prep Resources</h2>
             <p style="font-size: 1.2em; margin-bottom: 25px; color: #0277bd;">Master Water Cycle & Weather concepts with our enhanced study tools!</p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;">
-                <a href="chapter5_study_guide_enhanced.html" class="btn btn-primary" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #0288d1, #0277bd); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📚 Enhanced Study Guide<br><small style="opacity: 0.9;">Memory tricks & STAAR tips</small></a>
+                <a href="chapter5_study_guide_enhanced.html" class="btn" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #0288d1, #0277bd); border: none; border-radius: 12px; color: white;">📚 Enhanced Study Guide<br><small style="opacity: 0.9;">Memory tricks & STAAR tips</small></a>
                 
-                <a href="chapter5_practice_test.html" class="btn btn-success" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #00bcd4, #0097a7); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">📝 Practice Test<br><small style="opacity: 0.9;">STAAR-format questions</small></a>
+                <a href="chapter5_practice_test.html" class="btn" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #00bcd4, #0097a7); border: none; border-radius: 12px; color: white;">📝 Practice Test<br><small style="opacity: 0.9;">STAAR-format questions</small></a>
                 
-                <a href="test_strategies.html" class="btn btn-warning" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #ffc107, #ff8f00); border: none; border-radius: 12px; color: white; transition: all 0.3s ease;">🎯 Test Strategies<br><small style="opacity: 0.9;">Score higher on STAAR</small></a>
+                <a href="test_strategies.html" class="btn" style="display: block; padding: 20px; font-size: 1.1em; text-decoration: none; background: linear-gradient(135deg, #ffc107, #ff8f00); border: none; border-radius: 12px; color: white;">🎯 Test Strategies<br><small style="opacity: 0.9;">Score higher on STAAR</small></a>
             </div>
             
             <div style="background: rgba(255,255,255,0.8); padding: 15px; border-radius: 10px; margin-top: 20px;">
@@ -264,62 +344,6 @@
         </div>
     </div>
 
-    <script>
-        // Chapter 5 Quiz Data
-        const chapter5QuizData = {
-            questions: [
-                {
-                    question: "What is the process called when water changes from a liquid to a gas?",
-                    options: ["Condensation", "Precipitation", "Evaporation", "Collection"],
-                    correct: 2,
-                    explanation: "Evaporation occurs when the sun heats water and it changes from liquid to invisible water vapor!"
-                },
-                {
-                    question: "Which type of cloud is most likely to bring thunderstorms?",
-                    options: ["Cumulus", "Stratus", "Cirrus", "Cumulonimbus"],
-                    correct: 3,
-                    explanation: "Cumulonimbus clouds are tall, towering clouds that bring thunderstorms, heavy rain, and sometimes hail!"
-                },
-                {
-                    question: "What weather instrument measures air pressure?",
-                    options: ["Thermometer", "Barometer", "Anemometer", "Hygrometer"],
-                    correct: 1,
-                    explanation: "A barometer measures air pressure, which helps predict weather changes!"
-                },
-                {
-                    question: "What is the main difference between weather and climate?",
-                    options: ["Weather is hot, climate is cold", "Weather is short-term, climate is long-term patterns", "Weather is measured, climate is guessed", "There is no difference"],
-                    correct: 1,
-                    explanation: "Weather is what's happening right now (short-term), while climate is the long-term average weather patterns over 30+ years!"
-                },
-                {
-                    question: "During which step of the water cycle do clouds form?",
-                    options: ["Evaporation", "Condensation", "Precipitation", "Collection"],
-                    correct: 1,
-                    explanation: "Condensation is when water vapor cools and changes back to tiny water droplets, forming clouds!"
-                }
-            ]
-        };
-        
-        // Custom quiz class for Chapter 5
-        class Chapter5Quiz extends ScienceQuiz {
-            getQuizData() {
-                return chapter5QuizData;
-            }
-            
-            getChapterNumber() {
-                return 5;
-            }
-        }
-        
-        // Initialize Chapter 5 quiz
-        document.addEventListener('DOMContentLoaded', function() {
-            if (document.getElementById('quiz-container')) {
-                new Chapter5Quiz();
-            }
-            addPageAnimations();
-        });
-    </script>
     <script src="quiz.js"></script>
 </body>
 </html>
